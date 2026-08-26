@@ -12,3 +12,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...diagnostics.map((d) => ({ url: `${base}/diagnostics/${d.slug}`, priority: 0.8 })),
   ];
 }
+
+export const dynamic = "force-static";

@@ -11,8 +11,13 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+/* Aperçu client : le site ne doit jamais être indexé tant qu'il n'est pas
+   publié sur le vrai domaine. */
+const isPreview = process.env.NEXT_PUBLIC_PREVIEW === "1";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sud-diagnostic.fr"),
+  robots: isPreview ? { index: false, follow: false, nocache: true } : undefined,
   title: {
     default: `${site.name} — Diagnostic immobilier à Tarbes (65)`,
     template: `%s | ${site.name}`,
