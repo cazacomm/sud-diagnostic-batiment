@@ -1,0 +1,37 @@
+export const site = {
+  name: "SUD Diagnostic Bâtiment",
+  shortName: "SUD Diagnostic",
+  tagline: "Votre diagnostiqueur immobilier à Tarbes et dans les Hautes-Pyrénées",
+  since: 2008,
+  contact: {
+    name: "Christian Dulin",
+    role: "Diagnostiqueur immobilier certifié",
+    phone: "05 62 34 97 36",
+    phoneHref: "tel:+33562349736",
+    mobile: "06 26 24 67 93",
+    mobileHref: "tel:+33626246793",
+    email: "sud_diagnostic_batiment@yahoo.fr",
+  },
+  offices: [
+    { label: "Bureau de Tarbes", address: "Résidence Foch, 24 Cours Gambetta", city: "65000 Tarbes" },
+    { label: "Siège social", address: "24 Route de Tarbes", city: "65360 Vielle-Adour" },
+  ],
+  legal: {
+    siret: "822 927 802",
+    rcs: "RCS 822 927 802",
+    activity: "Diagnostic immobilier",
+    publisher: "Christian Dulin",
+  },
+  areas: [
+    { name: "Tarbes", cp: "65000" },
+    { name: "Aureilhan", cp: "65800" },
+    { name: "Séméac", cp: "65600" },
+    { name: "Lourdes", cp: "65100" },
+    { name: "Bagnères-de-Bigorre", cp: "65200" },
+    { name: "Argelès-Gazost", cp: "65400" },
+    { name: "Lannemezan", cp: "65300" },
+    { name: "Vic-en-Bigorre", cp: "65500" },
+    { name: "Pau", cp: "64000" },
+    { name: "Soumoulou", cp: "64420" },
+  ],
+} as const;

@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SUD Diagnostic Bâtiment — refonte du site (brouillon v1)
 
-## Getting Started
+Refonte du site [sud-diagnostic.fr](https://www.sud-diagnostic.fr) pour
+**SUD Diagnostic Bâtiment** (Christian Dulin, diagnostiqueur immobilier à Tarbes).
 
-First, run the development server:
+> ⚠️ **Brouillon.** Version de travail en attente de validation client et de
+> l'accès au nom de domaine. Rien n'est publié en production.
+
+## Stack
+
+- Next.js 16 (App Router) · React 19 · TypeScript
+- Tailwind CSS v4
+- 28 pages 100 % statiques (SSG) — hébergement Vercel ou export statique
+
+## Démarrer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de production
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Charte graphique
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Reprise de la **nouvelle carte de visite** (`public/brand/carte-visite.pdf`) :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Rôle | Couleur |
+| --- | --- |
+| Terracotta principal (carte de visite) | `#72402F` — `brand-600` |
+| Terracotta clair (accents sur fond foncé) | `#D2AC9C` — `brand-300` |
+| Brun profond (sections sombres) | `#2E1A15` — `brand-900` |
+| Fond sable | `#FBFAF8` / `#F5F2ED` — `sand-50` / `sand-100` |
+| Encre | `#1E1512` |
 
-## Learn More
+Typo : **Plus Jakarta Sans** (Google Fonts, chargée via `next/font`).
+Pictogrammes : SVG au trait redessinés dans l'esprit de ceux de la carte de visite
+(`src/components/icons.tsx`).
 
-To learn more about Next.js, take a look at the following resources:
+## Arborescence des pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| URL | Contenu |
+| --- | --- |
+| `/` | Accueil |
+| `/avant-vente` · `/avant-location` · `/avant-travaux` · `/copropriete` | Obligations par situation |
+| `/diagnostics` | Index des 13 prestations |
+| `/diagnostics/[slug]` | Fiche détaillée par diagnostic |
+| `/secteur` | Secteur d'intervention |
+| `/devis` | Formulaire de demande de devis |
+| `/contact` | Coordonnées |
+| `/mentions-legales` | Mentions légales |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contenu
 
-## Deploy on Vercel
+Les textes réglementaires sont repris et réécrits à partir de l'ancien site
+(contenu validé par le client), enrichis des durées de validité et des seuils
+réglementaires. Coordonnées et identité visuelle issues de la nouvelle carte de
+visite.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Points à traiter avant mise en ligne
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] **Formulaires** — `/devis` et le contact ouvrent aujourd'hui le client mail
+      du visiteur (`mailto:`). À brancher sur un vrai envoi serveur (Resend /
+      Vercel + route API) avant publication.
+- [ ] **Photos** — les visuels de `public/img/` proviennent de l'ancien site et
+      sont en très basse définition (400 px de large). À remplacer par des
+      photos du client ou des visuels HD.
+- [ ] **Logo** — aucun logo n'accompagne la nouvelle charte. Le logotype actuel
+      (`src/components/logo.tsx`) est une proposition à valider ; l'ancien logo
+      bleu est conservé dans `public/brand/logo-ancien.png`.
+- [ ] **Mentions légales** — vérifier l'hébergeur définitif et publier la
+      politique de confidentialité.
+- [ ] **Chiffres de la home** — « 13 diagnostics », « 24 h pour votre devis » :
+      à confirmer avec le client.
+- [ ] **Redirections 301** depuis les anciennes URL (`*-i12.html`, `dpe-*.html`,
+      `diagnostic-immobilier-*.html`) vers les nouvelles pages.
+- [ ] **Pages communes SEO** (DPE Tarbes, Diagnostic immobilier Lourdes…) —
+      l'ancien site en comptait une vingtaine, à réintégrer si l'on veut
+      conserver le référencement local.
