@@ -114,7 +114,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
           {[
             {
               index: "01",
@@ -172,7 +172,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {diagnostics.slice(0, 9).map((d, i) => (
             <Reveal key={d.slug} delay={(i % 3) * 110} className="h-full">
               <DiagnosticCard d={d} />
@@ -188,16 +188,16 @@ export default function Home() {
             <div>
               <Eyebrow>Le cabinet</Eyebrow>
               <H2>Un expert du bâtiment, pas un centre d’appel.</H2>
-              <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-                SUD Diagnostic Bâtiment est un bureau d’expertise en techniques du
-                bâtiment installé dans les Hautes-Pyrénées. Depuis {site.since},{" "}
-                {site.contact.name} intervient personnellement sur chaque mission :
-                prise de rendez-vous, visite, rapport et explications.
+              <p className="mt-5 text-base leading-relaxed text-ink-soft sm:text-lg">
+                Bureau d’expertise en techniques du bâtiment installé dans les
+                Hautes-Pyrénées. Depuis {site.since}, {site.contact.name}{" "}
+                intervient personnellement sur chaque mission : rendez-vous,
+                visite, rapport et explications.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-                Que vous soyez propriétaire, bailleur, syndic, agent immobilier,
-                notaire ou maître d’ouvrage, vous obtenez un devis gratuit et
-                détaillé avant toute intervention.
+              <p className="mt-4 text-base leading-relaxed text-ink-soft sm:text-lg">
+                Propriétaire, bailleur, syndic, agent immobilier, notaire ou
+                maître d’ouvrage : vous obtenez un devis gratuit et détaillé avant
+                toute intervention.
               </p>
               <div className="mt-8">
                 <Button href="/contact">
@@ -207,34 +207,38 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
               {
                 Icon: IconUser,
                 t: "Un seul interlocuteur",
-                d: "Le diagnostiqueur qui visite votre bien est celui qui rédige le rapport et qui vous répond au téléphone.",
+                d: "Celui qui visite votre bien rédige le rapport et vous répond au téléphone.",
               },
               {
                 Icon: IconShield,
                 t: "Certifié et assuré",
-                d: "Opérateur certifié Qualixpert, diagnostics couverts par une assurance responsabilité civile professionnelle.",
+                d: "Opérateur certifié Qualixpert, diagnostics couverts par une assurance RC professionnelle.",
               },
               {
                 Icon: IconClock,
                 t: "Rapports rapides",
-                d: "Devis sous 24 h, intervention planifiée rapidement et rapport transmis par e-mail dès sa validation.",
+                d: "Devis sous 24 h et rapport transmis par e-mail dès sa validation.",
               },
               {
                 Icon: IconPin,
                 t: "Ancré dans le 65",
-                d: "Basé à Tarbes et Vielle-Adour, nous connaissons le bâti local, les arrêtés préfectoraux et les zones à risques.",
+                d: "Nous connaissons le bâti local, les arrêtés préfectoraux et les zones à risques.",
               },
             ].map((f, i) => (
               <Reveal key={f.t} delay={i * 110} className="h-full">
-                <div className="h-full rounded-3xl border border-sand-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-[0_18px_50px_-24px_rgba(114,64,47,0.45)]">
-                  <f.Icon className="h-7 w-7 text-brand-600" />
-                  <h3 className="mt-4 font-bold tracking-tight">{f.t}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{f.d}</p>
+                <div className="h-full rounded-2xl border border-sand-200 bg-white p-4 transition sm:rounded-3xl sm:p-6 duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-[0_18px_50px_-24px_rgba(114,64,47,0.45)]">
+                  <f.Icon className="h-6 w-6 text-brand-600 sm:h-7 sm:w-7" />
+                  <h3 className="mt-3 text-sm font-bold tracking-tight sm:mt-4 sm:text-base">
+                    {f.t}
+                  </h3>
+                  <p className="mt-1.5 text-xs leading-snug text-ink-soft sm:mt-2 sm:text-sm sm:leading-relaxed">
+                    {f.d}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -252,7 +256,7 @@ export default function Home() {
             <H2>Quatre étapes, zéro mauvaise surprise.</H2>
           </div>
         </Reveal>
-        <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="grid grid-cols-2 gap-x-4 gap-y-7 sm:gap-8 lg:grid-cols-4">
           {[
             { n: "01", t: "Votre demande", d: "Formulaire ou appel. Vous décrivez le bien et votre projet." },
             { n: "02", t: "Devis sous 24 h", d: "Un tarif ferme et détaillé, tous diagnostics obligatoires compris." },
@@ -260,12 +264,16 @@ export default function Home() {
             { n: "04", t: "Votre rapport", d: "Rapport complet par e-mail, opposable et prêt pour le notaire." },
           ].map((s, i) => (
             <Reveal key={s.n} delay={i * 130}>
-              <li className="border-t border-white/15 pt-6">
-                <span className="text-xs font-bold tracking-[0.2em] text-brand-300">
+              <li className="border-t border-white/15 pt-4 sm:pt-6">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-brand-300 sm:text-xs">
                   {s.n}
                 </span>
-                <h3 className="mt-3 text-lg font-bold tracking-tight">{s.t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-200">{s.d}</p>
+                <h3 className="mt-2 text-sm font-bold tracking-tight sm:mt-3 sm:text-lg">
+                  {s.t}
+                </h3>
+                <p className="mt-1.5 text-xs leading-snug text-brand-200 sm:mt-2 sm:text-sm sm:leading-relaxed">
+                  {s.d}
+                </p>
               </li>
             </Reveal>
           ))}
@@ -322,20 +330,18 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={140}>
-            <div className="space-y-4 text-base leading-relaxed text-ink-soft">
+            <div className="space-y-4 text-sm leading-relaxed text-ink-soft sm:text-base">
               <p>
-                SUD Diagnostic Bâtiment, bureau constitué d’experts en techniques
-                du bâtiment dans le département des Hautes-Pyrénées, intervient
-                dans différents contextes : diagnostics immobiliers, expertises et
-                contrôles préalables aux chantiers.
+                Bureau d’experts en techniques du bâtiment dans les
+                Hautes-Pyrénées : diagnostics immobiliers, expertises et contrôles
+                préalables aux chantiers.
               </p>
               <p>
-                Avant une transaction immobilière à Tarbes et dans les environs,
-                nous constituons les rapports d’expertise pour la vente comme pour
-                la location. Pour réussir la mise en copropriété d’un immeuble et
-                sa gestion, comptez sur l’un de nos diagnostiqueurs. Et lorsque
-                s’annonce un projet de rénovation ou de démolition, nous vous
-                remettons les repérages amiante et plomb.
+                Avant une transaction à Tarbes et dans les environs, nous
+                constituons les rapports d’expertise pour la vente comme pour la
+                location. Pour une mise en copropriété, comptez sur l’un de nos
+                diagnostiqueurs. Et pour un projet de rénovation ou de démolition,
+                nous réalisons les repérages amiante et plomb.
               </p>
               <ul className="grid gap-2 pt-2 sm:grid-cols-2">
                 {[

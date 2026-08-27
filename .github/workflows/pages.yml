@@ -28,6 +28,9 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
           NEXT_PUBLIC_PREVIEW: "1"
+          # Renseigner le secret WEB3FORMS_KEY dans les réglages du dépôt pour
+          # que le formulaire envoie de vrais e-mails depuis l'aperçu.
+          NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
       - run: touch out/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

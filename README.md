@@ -58,9 +58,11 @@ visite.
 
 ## Points à traiter avant mise en ligne
 
-- [ ] **Formulaires** — `/devis` et le contact ouvrent aujourd'hui le client mail
-      du visiteur (`mailto:`). À brancher sur un vrai envoi serveur (Resend /
-      Vercel + route API) avant publication.
+- [ ] **Formulaire de devis** — prêt pour **Web3Forms**. Il suffit de créer la
+      clé sur [web3forms.com](https://web3forms.com) avec l'adresse du client,
+      puis de renseigner `NEXT_PUBLIC_WEB3FORMS_KEY` (voir `.env.example`, et
+      dans le workflow GitHub Actions pour l'aperçu). Sans clé, le formulaire
+      retombe automatiquement sur un `mailto:` pré-rempli — rien ne casse.
 - [ ] **Photos** — les visuels de `public/img/` proviennent de l'ancien site et
       sont en très basse définition (400 px de large). À remplacer par des
       photos du client ou des visuels HD.

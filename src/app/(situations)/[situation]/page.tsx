@@ -75,7 +75,7 @@ export default async function SituationPage({ params }: Params) {
           <Eyebrow>Le détail</Eyebrow>
           <H2 className="text-2xl sm:text-3xl">Les diagnostics concernés</H2>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {related.map((d) => (
             <DiagnosticCard key={d.slug} d={d} />
           ))}

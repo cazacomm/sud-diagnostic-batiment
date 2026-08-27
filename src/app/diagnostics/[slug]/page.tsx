@@ -137,7 +137,7 @@ export default async function DiagnosticPage({ params }: Params) {
           <Eyebrow>Voir aussi</Eyebrow>
           <H2 className="text-2xl sm:text-3xl">Les autres diagnostics</H2>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {others.map((o) => (
             <DiagnosticCard key={o.slug} d={o} />
           ))}

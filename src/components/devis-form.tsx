@@ -17,13 +17,21 @@ const field =
 
 const label = "mb-2 block text-xs font-bold uppercase tracking-wide text-brand-600";
 
+/* Renseigner NEXT_PUBLIC_WEB3FORMS_KEY (fichier .env.local ou variable de
+   build) pour que le formulaire envoie directement dans la boîte mail du
+   client. Tant que la clé est absente, on retombe sur un mailto pré-rempli. */
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+type Status = "idle" | "sending" | "sent" | "error";
+
 export function DevisForm() {
   const [selected, setSelected] = useState<string[]>([]);
+  const [status, setStatus] = useState<Status>("idle");
 
   const toggle = (slug: string) =>
     setSelected((s) => (s.includes(slug) ? s.filter((x) => x !== slug) : [...s, slug]));
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
     const get = (k: string) => String(f.get(k) ?? "").trim();
@@ -33,12 +41,46 @@ export function DevisForm() {
       .filter(Boolean)
       .join(", ");
 
+    const projet =
+      projets.find((p) => p.value === get("projet"))?.label ?? get("projet");
+
+    if (WEB3FORMS_KEY) {
+      setStatus("sending");
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: `Demande de devis — ${get("nom") || "site web"}`,
+            from_name: "Site SUD Diagnostic Bâtiment",
+            replyto: get("email"),
+            Nom: get("nom"),
+            Téléphone: get("tel"),
+            "E-mail": get("email"),
+            Projet: projet,
+            "Type de bien": get("bien"),
+            "Adresse du bien": get("adresse"),
+            "Surface (m²)": get("surface"),
+            "Année de construction": get("annee"),
+            "Diagnostics souhaités": wanted || "à définir avec le diagnostiqueur",
+            Message: get("message") || "—",
+            botcheck: get("botcheck"),
+          }),
+        });
+        setStatus(res.ok ? "sent" : "error");
+      } catch {
+        setStatus("error");
+      }
+      return;
+    }
+
     const body = [
       `Nom : ${get("nom")}`,
       `Téléphone : ${get("tel")}`,
       `E-mail : ${get("email")}`,
       "",
-      `Projet : ${projets.find((p) => p.value === get("projet"))?.label ?? get("projet")}`,
+      `Projet : ${projet}`,
       `Type de bien : ${get("bien")}`,
       `Adresse du bien : ${get("adresse")}`,
       `Surface approximative : ${get("surface")} m²`,
@@ -145,18 +187,60 @@ export function DevisForm() {
         <textarea id="message" name="message" rows={4} className={field} placeholder="Délais souhaités, particularités du bien, accès…" />
       </div>
 
+      {/* Piège à robots : invisible pour un humain, rempli par les bots. */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
+
       <div className="flex flex-wrap items-center gap-5">
         <button
           type="submit"
-          className="rounded-full bg-brand-600 px-7 py-3.5 text-sm font-bold text-white transition hover:bg-brand-700"
+          disabled={status === "sending" || status === "sent"}
+          className="shine rounded-full bg-brand-600 px-7 py-3.5 text-sm font-bold text-white transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          Envoyer ma demande
+          {status === "sending"
+            ? "Envoi en cours…"
+            : status === "sent"
+              ? "Demande envoyée ✓"
+              : "Envoyer ma demande"}
         </button>
         <p className="max-w-sm text-xs leading-relaxed text-ink-soft">
           Les informations transmises sont utilisées uniquement pour établir votre
           devis et organiser le rendez-vous.
         </p>
       </div>
+
+      {status === "sent" ? (
+        <p
+          role="status"
+          className="rounded-2xl border-l-4 border-brand-600 bg-brand-50 p-5 text-sm font-semibold leading-relaxed text-brand-700"
+        >
+          Merci, votre demande est bien partie. {site.contact.name} vous répond
+          sous 24 h ouvrées.
+        </p>
+      ) : null}
+
+      {status === "error" ? (
+        <p
+          role="alert"
+          className="rounded-2xl border-l-4 border-red-600 bg-red-50 p-5 text-sm font-semibold leading-relaxed text-red-800"
+        >
+          L’envoi a échoué. Appelez-nous au{" "}
+          <a href={site.contact.phoneHref} className="underline">
+            {site.contact.phone}
+          </a>{" "}
+          ou écrivez à{" "}
+          <a href={`mailto:${site.contact.email}`} className="underline">
+            {site.contact.email}
+          </a>
+          .
+        </p>
+      ) : null}
     </form>
   );
 }

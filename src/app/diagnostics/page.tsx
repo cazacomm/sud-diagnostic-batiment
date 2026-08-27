@@ -19,7 +19,7 @@ export default function DiagnosticsIndex() {
         breadcrumb={[{ label: "Diagnostics" }]}
       />
       <Section>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {diagnostics.map((d) => (
             <DiagnosticCard key={d.slug} d={d} />
           ))}

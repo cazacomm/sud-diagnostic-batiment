@@ -30,11 +30,11 @@ export default function SecteurPage() {
           </p>
         </div>
 
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-3">
           {site.areas.map((a) => (
             <li
               key={a.cp}
-              className="flex items-center gap-4 rounded-3xl border border-sand-200 bg-white px-6 py-5"
+              className="flex items-center gap-3 rounded-2xl border border-sand-200 bg-white px-4 py-4 sm:gap-4 sm:rounded-3xl sm:px-6 sm:py-5"
             >
               <IconPin className="h-6 w-6 shrink-0 text-brand-600" />
               <div>
