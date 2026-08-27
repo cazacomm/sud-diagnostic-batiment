@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /** Déclenche une classe dès que l'élément entre dans le viewport. */
-function useInView<T extends HTMLElement>(once = true) {
+function useInView<T extends HTMLElement>(once = true, fallbackMs?: number) {
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
 
@@ -37,8 +37,18 @@ function useInView<T extends HTMLElement>(once = true) {
     );
 
     io.observe(el);
-    return () => io.disconnect();
-  }, [once]);
+
+    /* Filet de sécurité : si l'observateur ne répond jamais (environnement
+       exotique), on affiche quand même au bout de `fallbackMs`. */
+    const timer = fallbackMs
+      ? window.setTimeout(() => setInView(true), fallbackMs)
+      : undefined;
+
+    return () => {
+      io.disconnect();
+      if (timer) window.clearTimeout(timer);
+    };
+  }, [once, fallbackMs]);
 
   return { ref, inView };
 }
@@ -96,7 +106,7 @@ export function CountUp({
   prefix?: string;
   duration?: number;
 }) {
-  const { ref, inView } = useInView<HTMLSpanElement>();
+  const { ref, inView } = useInView<HTMLSpanElement>(true, 2000);
   const [value, setValue] = useState(to);
   const [armed, setArmed] = useState(false);
 

@@ -20,6 +20,8 @@ export default function Home() {
     <>
       {/* ---------- HERO ---------- */}
       <div className="brand-grid relative overflow-hidden bg-brand-600 px-5 pb-24 pt-36 text-white sm:pb-32 sm:pt-44">
+        <div className="grid-halo" aria-hidden="true" />
+        <div className="grid-glow" aria-hidden="true" />
         <HeroGlow />
 
         <div className="relative mx-auto w-full max-w-6xl">
