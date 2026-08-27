@@ -54,15 +54,32 @@ body {
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(14px); }
+  from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: none; }
 }
 
+/* Entrée du hero. `--d` permet d'échelonner les éléments. */
 .rise {
-  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* Soulignement qui se déploie sous les titres de section. */
+@keyframes sweep {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.sweep {
+  transform-origin: left;
+  animation: sweep 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--d, 0ms);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise { animation: none; }
+  .rise,
+  .sweep {
+    animation: none;
+  }
   html { scroll-behavior: auto; }
 }

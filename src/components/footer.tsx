@@ -76,7 +76,14 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name} — {site.legal.rcs}
           </p>
-          <p>Diagnostics assurés · Opérateur certifié</p>
+          <p className="flex flex-wrap items-center gap-x-2">
+            <span>Diagnostics assurés · Opérateur certifié</span>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <span>
+              Site réalisé par{" "}
+              <span className="font-bold text-brand-100">Caza Comm</span>
+            </span>
+          </p>
         </div>
       </div>
     </footer>

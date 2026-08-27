@@ -36,6 +36,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
+      <head>
+        {/* Sans JavaScript, rien ne doit rester masqué par les animations. */}
+        <noscript>
+          <style>{`.reveal,.rise,.sweep{opacity:1!important;transform:none!important;animation:none!important}`}</style>
+        </noscript>
+      </head>
       <body className={`${jakarta.variable} font-sans antialiased`}>
         <a
           href="#contenu"

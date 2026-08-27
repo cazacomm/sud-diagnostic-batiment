@@ -9,7 +9,7 @@ export function DiagnosticCard({ d }: { d: Diagnostic }) {
   return (
     <Link
       href={`/diagnostics/${d.slug}`}
-      className="group flex flex-col justify-between rounded-3xl border border-sand-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-[0_18px_50px_-24px_rgba(114,64,47,0.45)]"
+      className="group flex h-full flex-col justify-between rounded-3xl border border-sand-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-[0_18px_50px_-24px_rgba(114,64,47,0.45)]"
     >
       <div>
         <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
@@ -42,7 +42,7 @@ export function SituationCard({
   return (
     <Link
       href={href}
-      className="group relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-3xl bg-brand-800 p-7 text-white"
+      className="group relative flex h-full min-h-[300px] flex-col justify-end overflow-hidden rounded-3xl bg-brand-800 p-7 text-white"
     >
       <Image
         src={image}
