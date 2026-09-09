@@ -29,16 +29,4 @@ export const site = {
     { code: "31", name: "Haute-Garonne" },
     { code: "40", name: "Landes" },
   ],
-  areas: [
-    { name: "Tarbes", cp: "65000" },
-    { name: "Aureilhan", cp: "65800" },
-    { name: "Séméac", cp: "65600" },
-    { name: "Lourdes", cp: "65100" },
-    { name: "Bagnères-de-Bigorre", cp: "65200" },
-    { name: "Argelès-Gazost", cp: "65400" },
-    { name: "Lannemezan", cp: "65300" },
-    { name: "Vic-en-Bigorre", cp: "65500" },
-    { name: "Pau", cp: "64000" },
-    { name: "Soumoulou", cp: "64420" },
-  ],
 } as const;

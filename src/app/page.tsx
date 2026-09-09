@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { site } from "@/lib/site";
 import { diagnostics } from "@/lib/diagnostics";
 import { Button, Eyebrow, H2, Section } from "@/components/ui";
 import { CtaBand, DiagnosticCard, SituationCard } from "@/components/blocks";
+import { CoverageRadar } from "@/components/coverage-radar";
 import { CountUp, HeroGlow, Reveal } from "@/components/motion";
 import {
   IconCheck,
@@ -277,20 +277,14 @@ export default function Home() {
               <Eyebrow>Secteur d’intervention</Eyebrow>
               <H2>Cinq départements, un seul diagnostiqueur.</H2>
               <p className="mt-5 text-base leading-relaxed text-ink-soft sm:text-lg">
-                Nous nous déplaçons dans les Hautes-Pyrénées et dans les
-                départements voisins. Votre commune ne figure pas dans la
-                liste&nbsp;? Appelez-nous, elle est très probablement couverte.
+                Nous intervenons dans les Hautes-Pyrénées et les quatre
+                départements voisins : Pyrénées-Atlantiques, Gers, Haute-Garonne
+                et Landes.
               </p>
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {site.departments.map((d) => (
-                  <li
-                    key={d.code}
-                    className="rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-700"
-                  >
-                    {d.code} · {d.name}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-4 text-base leading-relaxed text-ink-soft sm:text-lg">
+                Un doute sur votre commune&nbsp;? Un appel suffit : nous roulons
+                beaucoup et nous couvrons l’ensemble de ces départements.
+              </p>
               <div className="mt-8">
                 <Button href="/secteur" variant="outline">
                   Voir le secteur détaillé
@@ -298,21 +292,9 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
-          <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            {site.areas.map((a, i) => (
-              <Reveal key={a.cp} delay={i * 55} from="right" className="h-full">
-                <li className="h-full">
-                  <Link
-                    href="/secteur"
-                    className="flex h-full flex-col rounded-2xl border border-sand-200 bg-white px-4 py-3.5 transition hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50"
-                  >
-                    <span className="text-sm font-bold">{a.name}</span>
-                    <span className="text-xs text-ink-soft">{a.cp}</span>
-                  </Link>
-                </li>
-              </Reveal>
-            ))}
-          </ul>
+          <Reveal from="right" delay={120}>
+            <CoverageRadar />
+          </Reveal>
         </div>
       </Section>
 
