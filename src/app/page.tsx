@@ -37,12 +37,9 @@ export default function Home() {
             <span className="rise block" style={{ "--d": "140ms" } as React.CSSProperties}>
               Tous vos diagnostics immobiliers
             </span>
-            <span className="rise block" style={{ "--d": "220ms" } as React.CSSProperties}>
-              dans les Hautes-Pyrénées,
-            </span>
             <span
               className="rise block text-brand-200"
-              style={{ "--d": "300ms" } as React.CSSProperties}
+              style={{ "--d": "260ms" } as React.CSSProperties}
             >
               avec un seul interlocuteur.
             </span>
@@ -52,9 +49,9 @@ export default function Home() {
             className="rise mt-7 max-w-2xl text-lg leading-relaxed text-brand-100 sm:text-xl"
             style={{ "--d": "390ms" } as React.CSSProperties}
           >
-            Vente, location, chantier ou mise en copropriété : {site.contact.name}{" "}
-            réalise vos repérages et rapports d’expertise sur Tarbes, Lourdes, Pau
-            et tout le département 65.
+            Vente, location ou chantier : {site.contact.name} réalise vos
+            repérages et rapports d’expertise sur les Hautes-Pyrénées et les
+            départements voisins.
           </p>
 
           <div
@@ -78,11 +75,10 @@ export default function Home() {
             style={{ "--d": "550ms" } as React.CSSProperties}
           />
 
-          <dl className="mt-10 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+          <dl className="mt-10 grid max-w-3xl grid-cols-3 gap-x-6 gap-y-8">
             {[
               { n: years, suffix: " ans", v: "d’expérience terrain" },
-              { n: diagnostics.length, suffix: "", v: "diagnostics réalisés" },
-              { n: null, label: "65 · 64", v: "départements couverts" },
+              { n: site.departments.length, suffix: "", v: "départements couverts" },
               { n: 24, suffix: " h", v: "pour votre devis" },
             ].map((s, i) => (
               <div
@@ -91,7 +87,7 @@ export default function Home() {
                 style={{ "--d": `${620 + i * 70}ms` } as React.CSSProperties}
               >
                 <dt className="text-2xl font-extrabold tracking-tight tabular-nums sm:text-3xl">
-                  {s.n === null ? s.label : <CountUp to={s.n} suffix={s.suffix} />}
+                  <CountUp to={s.n} suffix={s.suffix} />
                 </dt>
                 <dd className="mt-1 text-sm text-brand-200">{s.v}</dd>
               </div>
@@ -114,7 +110,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {[
             {
               index: "01",
@@ -134,15 +130,8 @@ export default function Home() {
               index: "03",
               href: "/avant-travaux",
               title: "Vous lancez un chantier",
-              text: "Repérages amiante et plomb avant travaux ou démolition.",
+              text: "Repérage amiante avant travaux et avant démolition.",
               image: "/img/amiante-avant-travaux.jpg",
-            },
-            {
-              index: "04",
-              href: "/copropriete",
-              title: "Vous divisez un immeuble",
-              text: "DTA, DTG et diagnostics de mise en copropriété.",
-              image: "/img/copropriete.jpg",
             },
           ].map((c, i) => (
             <Reveal key={c.href} delay={i * 110} className="h-full">
@@ -286,13 +275,22 @@ export default function Home() {
           <Reveal from="left">
             <div>
               <Eyebrow>Secteur d’intervention</Eyebrow>
-              <H2>Tarbes, la Bigorre et le Béarn.</H2>
-              <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-                Nous intervenons dans l’ensemble des Hautes-Pyrénées (65) et sur
-                une partie des Pyrénées-Atlantiques (64). Votre commune ne figure
-                pas dans la liste&nbsp;? Appelez-nous, elle est probablement
-                couverte.
+              <H2>Cinq départements, un seul diagnostiqueur.</H2>
+              <p className="mt-5 text-base leading-relaxed text-ink-soft sm:text-lg">
+                Nous nous déplaçons dans les Hautes-Pyrénées et dans les
+                départements voisins. Votre commune ne figure pas dans la
+                liste&nbsp;? Appelez-nous, elle est très probablement couverte.
               </p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {site.departments.map((d) => (
+                  <li
+                    key={d.code}
+                    className="rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-700"
+                  >
+                    {d.code} · {d.name}
+                  </li>
+                ))}
+              </ul>
               <div className="mt-8">
                 <Button href="/secteur" variant="outline">
                   Voir le secteur détaillé
@@ -339,9 +337,8 @@ export default function Home() {
               <p>
                 Avant une transaction à Tarbes et dans les environs, nous
                 constituons les rapports d’expertise pour la vente comme pour la
-                location. Pour une mise en copropriété, comptez sur l’un de nos
-                diagnostiqueurs. Et pour un projet de rénovation ou de démolition,
-                nous réalisons les repérages amiante et plomb.
+                location. Et pour un projet de rénovation ou de démolition, nous
+                réalisons le repérage amiante avant travaux.
               </p>
               <ul className="grid gap-2 pt-2 sm:grid-cols-2">
                 {[

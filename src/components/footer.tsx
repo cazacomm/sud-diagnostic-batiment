@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             <Logo variant="light" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-brand-200">
-              Diagnostics immobiliers et contrôles avant chantier à Tarbes et dans
+              Diagnostics immobiliers et repérages avant chantier à Tarbes et dans
               les Hautes-Pyrénées depuis {site.since}. Opérateur certifié, un seul
               interlocuteur.
             </p>
@@ -36,7 +36,6 @@ export function Footer() {
             <FooterLink href="/avant-vente">Avant une vente</FooterLink>
             <FooterLink href="/avant-location">Avant une location</FooterLink>
             <FooterLink href="/avant-travaux">Avant travaux / démolition</FooterLink>
-            <FooterLink href="/copropriete">Mise en copropriété</FooterLink>
           </FooterCol>
 
           <FooterCol title="Diagnostics">

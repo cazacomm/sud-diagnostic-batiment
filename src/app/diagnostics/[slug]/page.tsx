@@ -59,23 +59,19 @@ export default async function DiagnosticPage({ params }: Params) {
                 <Link
                   key={c}
                   href={
-                    c === "copropriete"
-                      ? "/copropriete"
-                      : c === "travaux"
-                        ? "/avant-travaux"
-                        : c === "vente"
-                          ? "/avant-vente"
-                          : "/avant-location"
+                    c === "travaux"
+                      ? "/avant-travaux"
+                      : c === "vente"
+                        ? "/avant-vente"
+                        : "/avant-location"
                   }
                   className="inline-flex items-center gap-2 rounded-full border border-sand-300 px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink-soft transition hover:border-brand-400 hover:text-brand-700"
                 >
-                  {c === "copropriete"
-                    ? "Mise en copropriété"
-                    : c === "travaux"
-                      ? "Avant travaux"
-                      : c === "vente"
-                        ? "Avant vente"
-                        : "Avant location"}
+                  {c === "travaux"
+                    ? "Avant travaux"
+                    : c === "vente"
+                      ? "Avant vente"
+                      : "Avant location"}
                   <IconArrow className="h-3.5 w-3.5" />
                 </Link>
               ))}

@@ -46,8 +46,15 @@ export default async function SituationPage({ params }: Params) {
                   <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600">
                     <IconCheck className="h-3.5 w-3.5" />
                   </span>
-                  <div>
-                    <p className="font-bold leading-snug">{c.label}</p>
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <p className="font-bold leading-snug">{c.label}</p>
+                      {c.validity ? (
+                        <span className="rounded-full bg-brand-50 px-2.5 py-0.5 text-[11px] font-bold text-brand-700">
+                          Valable {c.validity}
+                        </span>
+                      ) : null}
+                    </div>
                     <p className="mt-1 text-sm leading-relaxed text-ink-soft">{c.note}</p>
                   </div>
                 </li>

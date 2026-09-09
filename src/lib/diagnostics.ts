@@ -1,6 +1,6 @@
 export type IconName =
   | "dpe" | "erp" | "carrez" | "boutin" | "gaz"
-  | "electricite" | "plomb" | "amiante" | "termites" | "dta" | "dtg";
+  | "electricite" | "plomb" | "amiante" | "termites";
 
 export type Diagnostic = {
   slug: string;
@@ -11,7 +11,7 @@ export type Diagnostic = {
   intro: string;
   body: string[];
   facts: { label: string; value: string }[];
-  contexts: ("vente" | "location" | "travaux" | "copropriete")[];
+  contexts: ("vente" | "location" | "travaux")[];
 };
 
 export const diagnostics: Diagnostic[] = [
@@ -27,9 +27,11 @@ export const diagnostics: Diagnostic[] = [
       "La performance énergétique d’un logement découle d’une évaluation menée par un diagnostiqueur certifié. Le DPE donne un aperçu de l’efficacité énergétique via une étiquette énergie intégrée dans l’annonce immobilière.",
       "Le rapport mentionne les caractéristiques techniques du bien, une estimation des coûts annuels d’énergie, ainsi que les travaux d’amélioration recommandés par l’expert. Les futurs occupants peuvent ainsi anticiper leur budget énergie.",
       "Le DPE accompagne les contrats de vente et de location pendant 10 ans, sauf en cas de travaux de rénovation énergétique ou de modification importante du bien entre-temps.",
+      "Attention : un DPE réalisé avant le 1ᵉʳ juillet 2021 relève de l’ancienne méthode de calcul et n’est plus valable, même s’il date de moins de 10 ans. Il doit être entièrement refait selon la nouvelle réglementation.",
     ],
     facts: [
       { label: "Validité", value: "10 ans" },
+      { label: "Avant juillet 2021", value: "À refaire intégralement (nouvelle réglementation)" },
       { label: "Concerne", value: "Vente et location" },
       { label: "À fournir", value: "Dès la mise en annonce" },
     ],
@@ -69,7 +71,7 @@ export const diagnostics: Diagnostic[] = [
       "Suite à une erreur de mesure, l’acheteur qui la constate peut obtenir la diminution du prix de vente. Outre les appareils de mesure dont dispose un spécialiste, confier cette expertise à un professionnel protège le vendeur.",
     ],
     facts: [
-      { label: "Validité", value: "Illimitée sauf travaux" },
+      { label: "Validité", value: "Illimitée" },
       { label: "Concerne", value: "Vente d’un lot de copropriété" },
       { label: "Enjeu", value: "Réduction du prix au-delà de 5 % d’écart" },
     ],
@@ -89,7 +91,7 @@ export const diagnostics: Diagnostic[] = [
       "L’opérateur prend toutes les mesures nécessaires pour livrer un diagnostic fiable. Lui confier cette tâche évite au bailleur d’être contraint de diminuer le loyer suite à une erreur de mesure. Sauf travaux, le rapport reste valable dans le temps.",
     ],
     facts: [
-      { label: "Validité", value: "Illimitée sauf travaux" },
+      { label: "Validité", value: "Illimitée, sauf travaux ou modification du bien" },
       { label: "Concerne", value: "Location (hors saisonnier)" },
       { label: "Depuis", value: "Loi du 25 mars 2009" },
     ],
@@ -149,7 +151,7 @@ export const diagnostics: Diagnostic[] = [
       "Le diagnostic plomb est attendu avant la vente ou la location des bâtiments anciens. En cas de diagnostic positif, il conviendra de procéder à des travaux pour sécuriser les lieux.",
     ],
     facts: [
-      { label: "Validité", value: "1 an (vente) · 6 ans (location) · illimitée si négatif" },
+      { label: "Validité", value: "Vente : 3 ans si positif, illimitée si négatif · Location : 6 ans" },
       { label: "Concerne", value: "Permis de construire avant janvier 1949" },
       { label: "Matériel", value: "Analyseur à fluorescence X" },
     ],
@@ -173,7 +175,7 @@ export const diagnostics: Diagnostic[] = [
       { label: "Concerne", value: "Permis de construire avant juillet 1997" },
       { label: "Si besoin", value: "Prélèvements et analyse en laboratoire" },
     ],
-    contexts: ["vente", "location", "travaux", "copropriete"],
+    contexts: ["vente", "location", "travaux"],
   },
   {
     slug: "termites",
@@ -193,7 +195,7 @@ export const diagnostics: Diagnostic[] = [
       { label: "Concerne", value: "Toute vente dans le 65" },
       { label: "Méthode", value: "Examen visuel et sondages au poinçon" },
     ],
-    contexts: ["vente", "travaux"],
+    contexts: ["vente"],
   },
   {
     slug: "amiante-avant-travaux",
@@ -234,46 +236,6 @@ export const diagnostics: Diagnostic[] = [
       { label: "Objectif", value: "Sécurité chantier et tri des déchets" },
     ],
     contexts: ["travaux"],
-  },
-  {
-    slug: "dta",
-    title: "Dossier technique amiante (DTA)",
-    short: "Copropriétés, ERP et locaux de travail",
-    icon: "dta",
-    image: "/img/dta.jpg",
-    intro:
-      "Le DTA recense la présence d’amiante dans les immeubles collectifs, les établissements recevant du public et les locaux de travail construits avant juillet 1997. Il doit être tenu à jour.",
-    body: [
-      "Comme l’ensemble des bâtiments construits avant juillet 1997, les immeubles d’habitation en copropriété, les établissements recevant du public et les locaux de travail s’exposent au risque amiante. Le DTA est effectué dans ces différents types de bâtiments, hors transaction immobilière.",
-      "Repérages amiante, travaux et opérations de retrait des matériaux et produits renfermant de l’amiante y sont mentionnés, avec une mise à jour obligatoire des différentes informations.",
-      "Ainsi, des occupants aux médecins du travail en passant par les entreprises intervenant pour des travaux d’entretien, chacun peut connaître les dangers relatifs à la présence d’amiante et les recommandations de sécurité.",
-    ],
-    facts: [
-      { label: "Concerne", value: "Parties communes, ERP, locaux de travail" },
-      { label: "Construction", value: "Permis avant juillet 1997" },
-      { label: "Mise à jour", value: "Obligatoire après travaux ou retrait" },
-    ],
-    contexts: ["copropriete"],
-  },
-  {
-    slug: "dtg",
-    title: "Diagnostic technique global (DTG)",
-    short: "État de l’immeuble et travaux à prévoir",
-    icon: "dtg",
-    image: "/img/dtg.jpg",
-    intro:
-      "Le DTG donne aux copropriétaires une vision d’ensemble de l’état de l’immeuble et des travaux à planifier sur les dix prochaines années.",
-    body: [
-      "Le DTG a été instauré pour donner aux copropriétaires et occupants une vision détaillée de l’état de l’immeuble et des possibilités d’amélioration, afin de mieux planifier les travaux.",
-      "Lors d’une mise en copropriété, le DTG est exigé si l’immeuble est bâti depuis plus de 10 ans. C’est également un diagnostic souvent requis quand une procédure d’insalubrité est en cours.",
-      "Dans les copropriétés existantes, le DTG doit être proposé aux copropriétaires lors de l’assemblée générale, sans obligation de vote positif. Il contient notamment l’efficacité énergétique (DPE ou audit énergétique) et des recommandations pour améliorer la gestion de l’immeuble.",
-    ],
-    facts: [
-      { label: "Obligatoire", value: "Mise en copropriété d’un immeuble de plus de 10 ans" },
-      { label: "Volontaire", value: "Proposé en assemblée générale" },
-      { label: "Contient", value: "État du bâti, DPE collectif, travaux à prévoir" },
-    ],
-    contexts: ["copropriete"],
   },
 ];
 

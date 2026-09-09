@@ -8,7 +8,6 @@ const projets = [
   { value: "vente", label: "Une vente" },
   { value: "location", label: "Une location" },
   { value: "travaux", label: "Des travaux / une démolition" },
-  { value: "copropriete", label: "Une mise en copropriété" },
   { value: "autre", label: "Autre" },
 ];
 

@@ -41,8 +41,8 @@ Pictogrammes : SVG au trait redessinés dans l'esprit de ceux de la carte de vis
 | URL | Contenu |
 | --- | --- |
 | `/` | Accueil |
-| `/avant-vente` · `/avant-location` · `/avant-travaux` · `/copropriete` | Obligations par situation |
-| `/diagnostics` | Index des 13 prestations |
+| `/avant-vente` · `/avant-location` · `/avant-travaux` | Obligations par situation |
+| `/diagnostics` | Index des 11 prestations |
 | `/diagnostics/[slug]` | Fiche détaillée par diagnostic |
 | `/secteur` | Secteur d'intervention |
 | `/devis` | Formulaire de demande de devis |
@@ -66,13 +66,12 @@ visite.
 - [ ] **Photos** — les visuels de `public/img/` proviennent de l'ancien site et
       sont en très basse définition (400 px de large). À remplacer par des
       photos du client ou des visuels HD.
-- [ ] **Logo** — aucun logo n'accompagne la nouvelle charte. Le logotype actuel
-      (`src/components/logo.tsx`) est une proposition à valider ; l'ancien logo
+- [ ] **Logo** — en attente du logo définitif du client. Le logotype actuel
+      (`src/components/logo.tsx`) est une proposition temporaire ; l'ancien logo
       bleu est conservé dans `public/brand/logo-ancien.png`.
 - [ ] **Mentions légales** — vérifier l'hébergeur définitif et publier la
       politique de confidentialité.
-- [ ] **Chiffres de la home** — « 13 diagnostics », « 24 h pour votre devis » :
-      à confirmer avec le client.
+- [ ] **Chiffres de la home** — « 24 h pour votre devis » : à confirmer.
 - [ ] **Redirections 301** depuis les anciennes URL (`*-i12.html`, `dpe-*.html`,
       `diagnostic-immobilier-*.html`) vers les nouvelles pages.
 - [ ] **Pages communes SEO** (DPE Tarbes, Diagnostic immobilier Lourdes…) —

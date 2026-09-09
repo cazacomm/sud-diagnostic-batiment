@@ -96,25 +96,6 @@ export const IconElectricite = (p: Props) => (
   </Svg>
 );
 
-/* Dossier — DTA */
-export const IconDta = (p: Props) => (
-  <Svg {...p}>
-    <path d="M4 9h9l2.5 3H28v14a1.5 1.5 0 0 1-1.5 1.5h-21A1.5 1.5 0 0 1 4 26z" />
-    <path d="M4 9V6.5A1.5 1.5 0 0 1 5.5 5h6" />
-    <path d="M11 18h10M11 22h7" />
-  </Svg>
-);
-
-/* Immeuble — DTG */
-export const IconDtg = (p: Props) => (
-  <Svg {...p}>
-    <path d="M6 27V8l10-4v23" />
-    <path d="M16 13h10v14" />
-    <path d="M4 27h24" />
-    <path d="M9.5 10.5h3M9.5 15h3M9.5 19.5h3M19.5 17h3M19.5 21.5h3" />
-  </Svg>
-);
-
 const map: Record<IconName, (p: Props) => React.ReactElement> = {
   dpe: IconDpe,
   erp: IconErp,
@@ -125,8 +106,6 @@ const map: Record<IconName, (p: Props) => React.ReactElement> = {
   plomb: IconPlomb,
   amiante: IconAmiante,
   termites: IconTermites,
-  dta: IconDta,
-  dtg: IconDtg,
 };
 
 export function Icon({ name, className }: { name: IconName; className?: string }) {

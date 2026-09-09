@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Diagnostics immobiliers avant vente, location, travaux et mise en copropriété à Tarbes et dans les Hautes-Pyrénées. DPE, amiante, plomb, termites, gaz, électricité, loi Carrez. Devis gratuit.",
+    "Diagnostics immobiliers avant vente, location et travaux à Tarbes et dans les Hautes-Pyrénées. DPE, amiante, plomb, termites, gaz, électricité, loi Carrez. Devis gratuit.",
   openGraph: {
     type: "website",
     locale: "fr_FR",

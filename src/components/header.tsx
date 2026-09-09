@@ -12,7 +12,6 @@ const situations = [
   { href: "/avant-vente", label: "Avant vente" },
   { href: "/avant-location", label: "Avant location" },
   { href: "/avant-travaux", label: "Avant travaux" },
-  { href: "/copropriete", label: "Copropriété" },
 ];
 
 export function Header() {

@@ -22,6 +22,13 @@ export const site = {
     activity: "Diagnostic immobilier",
     publisher: "Christian Dulin",
   },
+  departments: [
+    { code: "65", name: "Hautes-Pyrénées" },
+    { code: "64", name: "Pyrénées-Atlantiques" },
+    { code: "32", name: "Gers" },
+    { code: "31", name: "Haute-Garonne" },
+    { code: "40", name: "Landes" },
+  ],
   areas: [
     { name: "Tarbes", cp: "65000" },
     { name: "Aureilhan", cp: "65800" },

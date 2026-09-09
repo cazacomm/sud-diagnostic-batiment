@@ -7,7 +7,7 @@ import { IconPin } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Secteur d’intervention",
   description:
-    "SUD Diagnostic Bâtiment intervient à Tarbes, Lourdes, Bagnères-de-Bigorre, Argelès-Gazost, Lannemezan, Vic-en-Bigorre, Aureilhan, Séméac, Pau et Soumoulou.",
+    "SUD Diagnostic Bâtiment intervient dans les Hautes-Pyrénées (65), les Pyrénées-Atlantiques (64), le Gers (32), la Haute-Garonne (31) et les Landes (40).",
 };
 
 export default function SecteurPage() {
@@ -15,18 +15,39 @@ export default function SecteurPage() {
     <>
       <PageHero
         eyebrow="Secteur d’intervention"
-        title="Les Hautes-Pyrénées et le nord du Béarn"
-        intro="Basés à Tarbes et à Vielle-Adour, nous nous déplaçons dans tout le département 65 ainsi que sur une partie des Pyrénées-Atlantiques (64)."
+        title="Cinq départements couverts"
+        intro="Basés à Tarbes et à Vielle-Adour, nous nous déplaçons largement : Hautes-Pyrénées, Pyrénées-Atlantiques, Gers, Haute-Garonne et Landes."
         breadcrumb={[{ label: "Secteur" }]}
       />
 
       <Section>
+        <div className="mb-10 max-w-3xl">
+          <Eyebrow>Départements couverts</Eyebrow>
+          <H2 className="text-2xl sm:text-3xl">Nous nous déplaçons largement</H2>
+          <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            {site.departments.map((d) => (
+              <li
+                key={d.code}
+                className="rounded-2xl border border-sand-200 bg-white px-4 py-4 text-center"
+              >
+                <p className="text-2xl font-extrabold tracking-tight text-brand-600">
+                  {d.code}
+                </p>
+                <p className="mt-1 text-xs font-semibold leading-snug text-ink-soft">
+                  {d.name}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div className="mb-10 max-w-2xl">
           <Eyebrow>Communes desservies</Eyebrow>
           <H2 className="text-2xl sm:text-3xl">Où nous intervenons</H2>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-            Cette liste n’est pas limitative. Si votre commune n’y figure pas,
-            appelez-nous : elle est très probablement couverte par notre secteur.
+            Cette liste n’est pas limitative : nous intervenons bien au-delà. Si
+            votre commune n’y figure pas, appelez-nous, elle est très
+            probablement couverte.
           </p>
         </div>
 
