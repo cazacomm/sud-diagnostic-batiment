@@ -33,8 +33,9 @@ Reprise de la **nouvelle carte de visite** (`public/brand/carte-visite.pdf`) :
 | Encre | `#1E1512` |
 
 Typo : **Plus Jakarta Sans** (Google Fonts, chargée via `next/font`).
-Pictogrammes : SVG au trait redessinés dans l'esprit de ceux de la carte de visite
-(`src/components/icons.tsx`).
+Logo : fichier Illustrator du client vectorisé en SVG (`public/brand/`).
+Pictogrammes des diagnostics : SVG au trait redessinés dans l'esprit de ceux de
+la carte de visite (`src/components/icons.tsx`).
 
 ## Arborescence des pages
 
@@ -66,9 +67,11 @@ visite.
 - [ ] **Photos** — les visuels de `public/img/` proviennent de l'ancien site et
       sont en très basse définition (400 px de large). À remplacer par des
       photos du client ou des visuels HD.
-- [ ] **Logo** — en attente du logo définitif du client. Le logotype actuel
-      (`src/components/logo.tsx`) est une proposition temporaire ; l'ancien logo
-      bleu est conservé dans `public/brand/logo-ancien.png`.
+- [x] **Logo** — logo officiel du client intégré, vectorisé depuis le fichier
+      Illustrator. Sources dans `public/brand/` (`.ai`, `.svg`, `.png`
+      transparent) ; le tracé utilisé dans le site est
+      `src/components/logo-mark.tsx`, en `currentColor` pour fonctionner sur
+      fond clair comme sur fond foncé.
 - [ ] **Mentions légales** — vérifier l'hébergeur définitif et publier la
       politique de confidentialité.
 - [ ] **Chiffres de la home** — « 24 h pour votre devis » : à confirmer.
