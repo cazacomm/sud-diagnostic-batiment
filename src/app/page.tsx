@@ -117,24 +117,28 @@ export default function Home() {
               href: "/avant-vente",
               title: "Vous vendez",
               text: "DPE, ERP, gaz, électricité, plomb, amiante, termites, loi Carrez.",
-              image: "/img/vente.jpg",
+              image: "/img/situation-vente.webp",
             },
             {
               index: "02",
               href: "/avant-location",
               title: "Vous louez",
               text: "DPE, ERP, gaz, électricité, plomb, amiante, loi Boutin.",
-              image: "/img/location.jpg",
+              image: "/img/situation-location.webp",
             },
             {
               index: "03",
               href: "/avant-travaux",
               title: "Vous lancez un chantier",
               text: "Repérage amiante avant travaux et avant démolition.",
-              image: "/img/amiante-avant-travaux.jpg",
+              image: "/img/situation-travaux.webp",
             },
           ].map((c, i) => (
-            <Reveal key={c.href} delay={i * 110} className="h-full">
+            <Reveal
+              key={c.href}
+              delay={i * 110}
+              className={`h-full ${i === 2 ? "col-span-2 lg:col-span-1" : ""}`}
+            >
               <SituationCard {...c} />
             </Reveal>
           ))}

@@ -64,9 +64,11 @@ visite.
       puis de renseigner `NEXT_PUBLIC_WEB3FORMS_KEY` (voir `.env.example`, et
       dans le workflow GitHub Actions pour l'aperçu). Sans clé, le formulaire
       retombe automatiquement sur un `mailto:` pré-rempli — rien ne casse.
-- [ ] **Photos** — les visuels de `public/img/` proviennent de l'ancien site et
-      sont en très basse définition (400 px de large). À remplacer par des
-      photos du client ou des visuels HD.
+- [ ] **Photos** — les trois visuels de la section « Quelles sont vos
+      obligations » sont des photos libres de droit (voir *Crédits* ci-dessous).
+      Les vignettes des fiches diagnostic (`public/img/*.jpg`) proviennent
+      encore de l'ancien site et sont en très basse définition (400 px de
+      large) : à remplacer par des photos du client ou des visuels HD.
 - [x] **Logo** — logo officiel du client intégré, vectorisé depuis le fichier
       Illustrator. Sources dans `public/brand/` (`.ai`, `.svg`, `.png`
       transparent) ; le tracé utilisé dans le site est
@@ -80,3 +82,19 @@ visite.
 - [ ] **Pages communes SEO** (DPE Tarbes, Diagnostic immobilier Lourdes…) —
       l'ancien site en comptait une vingtaine, à réintégrer si l'on veut
       conserver le référencement local.
+
+## Crédits photo
+
+Les trois visuels de la section « Quelles sont vos obligations » viennent
+d'[Unsplash](https://unsplash.com). La licence Unsplash autorise l'usage
+commercial sans autorisation ni attribution obligatoire ; les identifiants sont
+conservés ici pour la traçabilité.
+
+| Fichier | Identifiant Unsplash |
+| --- | --- |
+| `public/img/situation-vente.webp` | `photo-1784807786602-fc62efb23333` |
+| `public/img/situation-location.webp` | `photo-1786096966317-2e7052a98733` |
+| `public/img/situation-travaux.webp` | `photo-1634586648651-f1fb9ec10d90` |
+
+Recadrés au carré et convertis en WebP (1000 × 1000, qualité 82) pour couvrir
+l'affichage portrait sur mobile comme paysage sur grand écran.

@@ -159,14 +159,32 @@ body {
 /* --- Radar de couverture ---------------------------------------------- */
 
 .radar-sweep {
+  pointer-events: none;
+}
+
+/* Faisceau principal : large, sens horaire. */
+.radar-sweep--main {
   background: conic-gradient(
     from 0deg,
-    rgba(114, 64, 47, 0.16) 0deg,
-    rgba(114, 64, 47, 0.04) 38deg,
-    transparent 62deg,
+    rgba(114, 64, 47, 0.18) 0deg,
+    rgba(114, 64, 47, 0.05) 40deg,
+    transparent 66deg,
     transparent 360deg
   );
   animation: radar-spin 7s linear infinite;
+}
+
+/* Second faisceau : plus fin, sens antihoraire, vitesse différente pour
+   que les deux ne se synchronisent jamais. */
+.radar-sweep--second {
+  background: conic-gradient(
+    from 0deg,
+    rgba(114, 64, 47, 0.13) 0deg,
+    rgba(114, 64, 47, 0.03) 24deg,
+    transparent 42deg,
+    transparent 360deg
+  );
+  animation: radar-spin-reverse 11.5s linear infinite;
 }
 
 .radar-ping {
@@ -185,6 +203,12 @@ body {
 @keyframes radar-spin {
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes radar-spin-reverse {
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
 

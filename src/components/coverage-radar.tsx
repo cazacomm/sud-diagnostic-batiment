@@ -31,10 +31,16 @@ export function CoverageRadar() {
           />
         ))}
 
-        {/* Balayage rotatif */}
+        {/* Deux faisceaux : le principal tourne régulièrement, le second
+            part en sens inverse à une autre vitesse — les deux se croisent
+            sans jamais se synchroniser. */}
         <span
           aria-hidden="true"
-          className="radar-sweep absolute left-1/2 top-1/2 h-[76%] w-[76%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="radar-sweep radar-sweep--main absolute left-1/2 top-1/2 h-[76%] w-[76%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        />
+        <span
+          aria-hidden="true"
+          className="radar-sweep radar-sweep--second absolute left-1/2 top-1/2 h-[76%] w-[76%] -translate-x-1/2 -translate-y-1/2 rounded-full"
         />
 
         {/* Ondes qui partent du centre */}
