@@ -7,6 +7,7 @@ import { Eyebrow, H2, PageHero, Section } from "@/components/ui";
 import { CtaBand, DiagnosticCard } from "@/components/blocks";
 import { Icon, IconArrow } from "@/components/icons";
 import { site } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -82,7 +83,7 @@ export default async function DiagnosticPage({ params }: Params) {
             <div className="overflow-hidden rounded-3xl border border-sand-200 bg-white">
               <div className="relative aspect-[4/3]">
                 <Image
-                  src={d.image}
+                  src={asset(d.image)}
                   alt=""
                   fill
                   sizes="(max-width: 1024px) 100vw, 440px"

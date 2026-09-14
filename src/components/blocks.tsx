@@ -4,6 +4,7 @@ import { Icon, IconArrow, IconPhone } from "./icons";
 import { Button, H2, Section } from "./ui";
 import { site } from "@/lib/site";
 import type { Diagnostic } from "@/lib/diagnostics";
+import { asset } from "@/lib/asset";
 
 export function DiagnosticCard({ d }: { d: Diagnostic }) {
   return (
@@ -49,7 +50,7 @@ export function SituationCard({
       className="group relative flex h-full min-h-[190px] flex-col justify-end overflow-hidden rounded-2xl bg-brand-800 p-4 text-white sm:min-h-[300px] sm:rounded-3xl sm:p-7"
     >
       <Image
-        src={image}
+        src={asset(image)}
         alt=""
         fill
         sizes="(max-width: 640px) 50vw, 25vw"
