@@ -66,9 +66,11 @@ export default function SecteurPage() {
           </div>
           <div className="space-y-4 text-sm leading-relaxed text-ink-soft sm:text-base">
             <p>
-              Le département des Hautes-Pyrénées est déclaré totalement termité
-              par arrêté préfectoral : le diagnostic termites est donc
-              systématique avant une vente.
+              Les obligations se lisent commune par commune. Par exemple, le
+              département des Hautes-Pyrénées est largement couvert par un arrêté
+              préfectoral termites : le diagnostic est donc systématique avant une
+              vente, à l’exception de certaines communes d’altitude. Ces arrêtés
+              évoluent, nous vérifions celui en vigueur avant chaque intervention.
             </p>
             <p>
               Les zones de plans de prévention des risques et les secteurs à

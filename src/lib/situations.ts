@@ -31,9 +31,9 @@ export const situations: Record<string, Situation> = {
     ],
     checklist: [
       {
-        label: "DPE",
+        label: "DPE / audit énergétique",
         validity: "10 ans",
-        note: "Un DPE réalisé avant le 1ᵉʳ juillet 2021 n’est plus valable : il doit être entièrement refait.",
+        note: "Un DPE réalisé avant le 1ᵉʳ juillet 2021 n’est plus valable : il doit être entièrement refait. À la vente, un audit énergétique s’ajoute au DPE dès que le bien est classé E, F ou G.",
       },
       {
         label: "Diagnostic gaz",
@@ -51,8 +51,8 @@ export const situations: Record<string, Situation> = {
         note: "À refaire s’il date de plus de six mois à la signature.",
       },
       {
-        label: "Diagnostic plomb",
-        validity: "3 ans si positif · illimité si négatif",
+        label: "Diagnostic plomb (CREP)",
+        validity: "1 an en présence de plomb · à vie en son absence",
         note: "Si le permis de construire est antérieur à janvier 1949.",
       },
       {
@@ -68,7 +68,7 @@ export const situations: Record<string, Situation> = {
       {
         label: "Diagnostic termites",
         validity: "6 mois",
-        note: "Le département 65 est déclaré totalement termité.",
+        note: "Selon l’arrêté préfectoral en vigueur sur la commune du bien.",
       },
     ],
   },
@@ -89,9 +89,9 @@ export const situations: Record<string, Situation> = {
     ],
     checklist: [
       {
-        label: "DPE",
+        label: "DPE / audit énergétique",
         validity: "10 ans",
-        note: "Un DPE réalisé avant le 1ᵉʳ juillet 2021 n’est plus valable : il doit être entièrement refait.",
+        note: "Un DPE réalisé avant le 1ᵉʳ juillet 2021 n’est plus valable : il doit être entièrement refait. À la vente, un audit énergétique s’ajoute au DPE dès que le bien est classé E, F ou G.",
       },
       {
         label: "Diagnostic gaz",
@@ -114,8 +114,8 @@ export const situations: Record<string, Situation> = {
         note: "À mentionner dans le bail et les annonces.",
       },
       {
-        label: "Diagnostic plomb",
-        validity: "6 ans",
+        label: "Diagnostic plomb (CREP)",
+        validity: "6 ans en présence de plomb · à vie en son absence",
         note: "Bâtiments construits avant janvier 1949.",
       },
       {
@@ -139,7 +139,7 @@ export const situations: Record<string, Situation> = {
     body: [
       "L’objectif est également de mener à bien le traitement des déchets dus au chantier. Repérer les matériaux ou produits renfermant de l’amiante permet au donneur d’ordre et au maître d’ouvrage de connaître les risques encourus.",
       "Les entreprises intervenantes peuvent alors prendre les mesures préventives indispensables pour protéger leurs employés et éviter, par la suite, des retards dans les travaux.",
-      "Nous réalisons également le repérage plomb avant travaux, particulièrement recommandé dans le bâti antérieur à 1949.",
+      "Nous réalisons également le repérage plomb avant travaux. Il est obligatoire dans le bâti antérieur à 1949, et fortement recommandé jusqu’aux constructions d’avant 1994 : les peintures au plomb ont continué d’être employées malgré leur interdiction. En cas de doute, mieux vaut le réaliser.",
     ],
     checklist: [
       {
@@ -152,7 +152,8 @@ export const situations: Record<string, Situation> = {
       },
       {
         label: "Repérage plomb avant travaux",
-        note: "Prioritaire dans le bâti antérieur à 1949, conseillé au-delà.",
+        validity: "1 an en vente · 6 ans en location si présence · à vie si absence",
+        note: "Obligatoire avant 1949, fortement recommandé jusqu’aux constructions d’avant 1994 et en cas de doute.",
       },
     ],
     note:

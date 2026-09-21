@@ -14,7 +14,7 @@ export function DiagnosticCard({ d }: { d: Diagnostic }) {
     >
       <div>
         <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white sm:mb-5 sm:h-12 sm:w-12 sm:rounded-2xl">
-          <Icon name={d.icon} className="h-5 w-5 sm:h-6 sm:w-6" />
+          <Icon name={d.icon} className="h-6 w-6 sm:h-8 sm:w-8" />
         </span>
         <h3 className="text-sm font-bold leading-snug tracking-tight text-balance sm:text-lg">
           {d.title}

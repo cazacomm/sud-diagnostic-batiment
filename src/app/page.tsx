@@ -116,7 +116,7 @@ export default function Home() {
               index: "01",
               href: "/avant-vente",
               title: "Vous vendez",
-              text: "DPE, ERP, gaz, électricité, plomb, amiante, termites, loi Carrez.",
+              text: "DPE et audit énergétique, ERP, gaz, électricité, plomb, amiante, termites, loi Carrez.",
               image: "/img/situation-vente.webp",
             },
             {
@@ -130,7 +130,7 @@ export default function Home() {
               index: "03",
               href: "/avant-travaux",
               title: "Vous lancez un chantier",
-              text: "Repérage amiante avant travaux et avant démolition.",
+              text: "Repérage amiante et plomb, avant travaux et avant démolition.",
               image: "/img/situation-travaux.webp",
             },
           ].map((c, i) => (

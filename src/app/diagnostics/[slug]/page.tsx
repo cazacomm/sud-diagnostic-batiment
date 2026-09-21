@@ -55,6 +55,23 @@ export default async function DiagnosticPage({ params }: Params) {
               ))}
             </div>
 
+            <div className="mt-10 rounded-3xl border border-sand-200 bg-sand-100 p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-500">
+                Référentiel appliqué
+              </p>
+              <p className="mt-3 text-lg font-extrabold tracking-tight">
+                {d.reference.label}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-ink-soft">
+                {d.reference.value}
+              </p>
+              {d.reference.note ? (
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  {d.reference.note}
+                </p>
+              ) : null}
+            </div>
+
             <div className="mt-10 flex flex-wrap gap-2">
               {d.contexts.map((c) => (
                 <Link
@@ -107,8 +124,7 @@ export default async function DiagnosticPage({ params }: Params) {
                 Besoin de ce diagnostic&nbsp;?
               </p>
               <p className="mt-2 text-sm leading-relaxed text-brand-100">
-                Devis gratuit sous 24 h, intervention sur Tarbes et tout le
-                département 65.
+                Devis gratuit sous 24 h, intervention dans tout le Sud-Ouest.
               </p>
               <div className="mt-5 flex flex-col gap-2">
                 <Link

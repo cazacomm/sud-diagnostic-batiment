@@ -12,8 +12,8 @@ export function Footer() {
           <div>
             <Logo variant="light" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-brand-200">
-              Diagnostics immobiliers et repérages avant chantier à Tarbes et dans
-              les Hautes-Pyrénées depuis {site.since}. Opérateur certifié, un seul
+              Diagnostics immobiliers et repérages avant chantier dans tout le
+              Sud-Ouest depuis {site.since}. Opérateur certifié, un seul
               interlocuteur.
             </p>
             <div className="mt-6 space-y-3 text-sm">

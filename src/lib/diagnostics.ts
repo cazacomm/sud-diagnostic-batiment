@@ -11,6 +11,8 @@ export type Diagnostic = {
   intro: string;
   body: string[];
   facts: { label: string; value: string }[];
+  /** Norme AFNOR ou texte de loi encadrant le diagnostic. */
+  reference: { label: string; value: string; note?: string };
   contexts: ("vente" | "location" | "travaux")[];
 };
 
@@ -28,13 +30,19 @@ export const diagnostics: Diagnostic[] = [
       "Le rapport mentionne les caractéristiques techniques du bien, une estimation des coûts annuels d’énergie, ainsi que les travaux d’amélioration recommandés par l’expert. Les futurs occupants peuvent ainsi anticiper leur budget énergie.",
       "Le DPE accompagne les contrats de vente et de location pendant 10 ans, sauf en cas de travaux de rénovation énergétique ou de modification importante du bien entre-temps.",
       "Attention : un DPE réalisé avant le 1ᵉʳ juillet 2021 relève de l’ancienne méthode de calcul et n’est plus valable, même s’il date de moins de 10 ans. Il doit être entièrement refait selon la nouvelle réglementation.",
+      "À la vente, un audit énergétique vient s’ajouter au DPE dès que le logement est classé E, F ou G. Il détaille les scénarios de travaux permettant d’atteindre une meilleure classe et doit être remis à l’acquéreur dès la visite.",
     ],
     facts: [
       { label: "Validité", value: "10 ans" },
       { label: "Avant juillet 2021", value: "À refaire intégralement (nouvelle réglementation)" },
       { label: "Concerne", value: "Vente et location" },
-      { label: "À fournir", value: "Dès la mise en annonce" },
+      { label: "Audit énergétique", value: "Obligatoire à la vente si le bien est classé E, F ou G" },
     ],
+    reference: {
+      label: "Méthode 3CL-DPE 2021",
+      value: "Arrêtés ministériels de mars et octobre 2021",
+      note: "Pour un local professionnel, la méthode s’appuie sur les factures, également encadrée par la loi. L’audit énergétique relève de l’article L. 126-28-1 du Code de la construction et de l’habitation, du décret n° 2022-780 du 4 mai 2022 et de l’arrêté du 4 mai 2022, qui reprend la méthode 3CL-2021.",
+    },
     contexts: ["vente", "location"],
   },
   {
@@ -55,6 +63,11 @@ export const diagnostics: Diagnostic[] = [
       { label: "Concerne", value: "Vente et location" },
       { label: "Source", value: "Données préfecture / mairie" },
     ],
+    reference: {
+      label: "Plans de prévention des risques",
+      value: "Arrêtés préfectoraux propres à chaque commune",
+      note: "Risques naturels, technologiques, miniers et sismicité.",
+    },
     contexts: ["vente", "location"],
   },
   {
@@ -64,17 +77,20 @@ export const diagnostics: Diagnostic[] = [
     icon: "carrez",
     image: "/img/loi-carrez.jpg",
     intro:
-      "Le mesurage Loi Carrez certifie la superficie privative d’un lot de copropriété mis en vente. Une erreur de mesure supérieure à 5 % expose le vendeur à une réduction du prix.",
+      "Le mesurage Loi Carrez certifie la superficie privative d’un lot de copropriété mis en vente.",
     body: [
       "Afin de garantir la bonne information de l’acheteur d’un lot de copropriété, le mesurage de la superficie privative est requis avant la vente. C’est également obligatoire quand plusieurs lots sont vendus ensemble.",
       "Cette superficie se calcule en prenant la surface de plancher construite après en avoir soustrait, entre autres, les murs, cloisons, gaines et marches d’escalier. Certaines surfaces non habitables sont d’emblée exclues, par exemple les sous-sols et les terrasses.",
-      "Suite à une erreur de mesure, l’acheteur qui la constate peut obtenir la diminution du prix de vente. Outre les appareils de mesure dont dispose un spécialiste, confier cette expertise à un professionnel protège le vendeur.",
+      "Outre les appareils de mesure dont dispose un spécialiste, confier cette expertise à un professionnel garantit un métrage fiable et sécurise la vente.",
     ],
     facts: [
       { label: "Validité", value: "Illimitée" },
       { label: "Concerne", value: "Vente d’un lot de copropriété" },
-      { label: "Enjeu", value: "Réduction du prix au-delà de 5 % d’écart" },
     ],
+    reference: {
+      label: "Décret n° 97-532",
+      value: "Code de la construction et de l’habitation",
+    },
     contexts: ["vente"],
   },
   {
@@ -95,6 +111,10 @@ export const diagnostics: Diagnostic[] = [
       { label: "Concerne", value: "Location (hors saisonnier)" },
       { label: "Depuis", value: "Loi du 25 mars 2009" },
     ],
+    reference: {
+      label: "Code de la construction et de l’habitation",
+      value: "Règles de calcul de la surface habitable",
+    },
     contexts: ["location"],
   },
   {
@@ -115,6 +135,7 @@ export const diagnostics: Diagnostic[] = [
       { label: "Concerne", value: "Installations de plus de 15 ans" },
       { label: "Points contrôlés", value: "Alimentation, ventilation, combustion" },
     ],
+    reference: { label: "NF P 45-500", value: "Norme AFNOR" },
     contexts: ["vente", "location"],
   },
   {
@@ -135,6 +156,7 @@ export const diagnostics: Diagnostic[] = [
       { label: "Concerne", value: "Installations de plus de 15 ans" },
       { label: "Méthode", value: "Contrôles visuels, essais et mesures" },
     ],
+    reference: { label: "NF C 16-600", value: "Norme AFNOR" },
     contexts: ["vente", "location"],
   },
   {
@@ -148,13 +170,16 @@ export const diagnostics: Diagnostic[] = [
     body: [
       "De nombreux logements exposent leurs occupants à un risque d’ingestion et d’inhalation de plomb. Ce métal a fait partie des revêtements, et en particulier des peintures des bâtiments, jusqu’en 1949.",
       "L’expert certifié détermine si la concentration en plomb, l’état de dégradation du revêtement et les éventuels facteurs de dégradation entraînent un risque de saturnisme pour les futurs occupants. L’utilisation d’un analyseur à fluorescence X permet de mener à bien cette expertise.",
-      "Le diagnostic plomb est attendu avant la vente ou la location des bâtiments anciens. En cas de diagnostic positif, il conviendra de procéder à des travaux pour sécuriser les lieux.",
+      "Le diagnostic plomb est attendu avant la vente ou la location des bâtiments anciens.",
+      "En cas de diagnostic positif, l’arrêté impose de rendre le plomb inaccessible : recouvrement ou encapsulage des revêtements dégradés. La règle d’or pendant ces travaux est de ne surtout pas générer de poussière, principal vecteur d’intoxication.",
     ],
     facts: [
-      { label: "Validité", value: "Vente : 3 ans si positif, illimitée si négatif · Location : 6 ans" },
+      { label: "Validité", value: "Vente : 1 an · Location : 6 ans — en présence de plomb" },
+      { label: "Si absence de plomb", value: "Valable à vie, en vente comme en location" },
       { label: "Concerne", value: "Permis de construire avant janvier 1949" },
       { label: "Matériel", value: "Analyseur à fluorescence X" },
     ],
+    reference: { label: "NF X 46-030", value: "Norme AFNOR" },
     contexts: ["vente", "location"],
   },
   {
@@ -171,30 +196,32 @@ export const diagnostics: Diagnostic[] = [
       "L’opérateur certifié examine les matériaux connus pour contenir de l’amiante. Si besoin, il procède à des prélèvements pour les faire analyser en laboratoire. Le rapport permet de connaître l’état de conservation des matériaux et les précautions à prendre.",
     ],
     facts: [
-      { label: "Validité", value: "Illimitée si absence (rapports après 2013)" },
+      { label: "Validité", value: "Illimitée en l’absence d’amiante" },
       { label: "Concerne", value: "Permis de construire avant juillet 1997" },
       { label: "Si besoin", value: "Prélèvements et analyse en laboratoire" },
     ],
+    reference: { label: "NF X 46-020", value: "Norme AFNOR" },
     contexts: ["vente", "location", "travaux"],
   },
   {
     slug: "termites",
     title: "Diagnostic termites",
-    short: "Hautes-Pyrénées : département termité",
+    short: "Zones délimitées par arrêté préfectoral",
     icon: "termites",
     image: "/img/termites.jpg",
     intro:
-      "Les Hautes-Pyrénées sont déclarées totalement termitées par arrêté préfectoral : le diagnostic termites est donc obligatoire pour toute vente dans le département.",
+      "Le diagnostic termites s’impose dans les zones délimitées par arrêté préfectoral. Ces arrêtés évoluent régulièrement et s’apprécient commune par commune : nous vérifions celui en vigueur avant chaque intervention.",
     body: [
-      "Dans les départements déclarés termités par arrêté préfectoral, les propriétaires sont obligés de transmettre un diagnostic termites à l’acquéreur de leur bien immobilier. C’est le cas dans les Hautes-Pyrénées, département totalement termité.",
+      "Dans les zones déclarées termitées par arrêté préfectoral, le propriétaire doit transmettre un diagnostic termites à l’acquéreur de son bien. Le périmètre concerné se lit dans l’arrêté en vigueur : les Hautes-Pyrénées, par exemple, sont largement couvertes, mais certaines communes d’altitude en sont exemptées et les textes changent régulièrement.",
       "L’expertise porte sur les pièces accessibles ainsi que sur une partie du terrain alentour. La réalisation du diagnostic comporte un examen visuel et des sondages manuels au poinçon.",
       "Le rapport mentionne les parties du bien visitées ou non, jusqu’au signalement des éléments infestés. En cas d’infestation par ces insectes xylophages, des travaux de désinsectisation seront prescrits et la mairie devra être informée.",
     ],
     facts: [
       { label: "Validité", value: "6 mois" },
-      { label: "Concerne", value: "Toute vente dans le 65" },
+      { label: "Concerne", value: "Arrêté préfectoral (cas par cas)" },
       { label: "Méthode", value: "Examen visuel et sondages au poinçon" },
     ],
+    reference: { label: "NF P 03-201", value: "Norme AFNOR" },
     contexts: ["vente"],
   },
   {
@@ -215,6 +242,7 @@ export const diagnostics: Diagnostic[] = [
       { label: "Demandeur", value: "Donneur d’ordre / maître d’ouvrage" },
       { label: "Objectif", value: "Sécurité des intervenants et gestion des déchets" },
     ],
+    reference: { label: "NF X 46-020", value: "Norme AFNOR" },
     contexts: ["travaux"],
   },
   {
@@ -227,14 +255,15 @@ export const diagnostics: Diagnostic[] = [
       "Les chantiers menés dans les bâtiments anciens libèrent des poussières et écailles de peinture au plomb. Le repérage préalable permet de protéger les intervenants et de trier les déchets.",
     body: [
       "Les travaux et les chantiers de démolition, surtout dans les bâtiments construits avant 1949, peuvent provoquer l’ingestion ou l’inhalation accidentelle de poussières et d’écailles toxiques.",
-      "Il faut donc repérer au préalable s’il y a présence de plomb à cause de peintures anciennes et, le cas échéant, déterminer la concentration. Même dans les constructions relativement récentes, le contrôle plomb avant travaux s’avère conseillé.",
+      "Le repérage est obligatoire dans le bâti antérieur à 1949. Il reste fortement recommandé jusqu’aux constructions des années 1990 : les peintures au plomb ont continué d’être utilisées malgré leur interdiction. En cas de doute sur la date ou sur les revêtements, mieux vaut le réaliser.",
       "Le résultat du diagnostic mené par l’opérateur certifié permet d’informer les personnes concernées par les travaux et de prendre les précautions nécessaires. Il est également indispensable pour gérer les déchets en fonction de leur nature et de leur teneur en plomb.",
     ],
     facts: [
-      { label: "Recommandé", value: "Avant tout chantier" },
-      { label: "Prioritaire", value: "Bâtiments avant 1949" },
+      { label: "Obligatoire", value: "Bâtiments antérieurs à 1949" },
+      { label: "Recommandé", value: "Jusqu’aux constructions d’avant 1994, et en cas de doute" },
       { label: "Objectif", value: "Sécurité chantier et tri des déchets" },
     ],
+    reference: { label: "NF X 46-030", value: "Norme AFNOR" },
     contexts: ["travaux"],
   },
 ];

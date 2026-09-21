@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero, Section } from "@/components/ui";
 import { DevisForm } from "@/components/devis-form";
 import { site } from "@/lib/site";
-import { IconClock, IconPhone, IconShield, IconUser } from "@/components/icons";
+import { IconClock, IconMail, IconPhone, IconShield, IconUser } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Demande de devis gratuit",
@@ -29,24 +29,35 @@ export default function DevisPage() {
           <aside className="space-y-4 lg:sticky lg:top-28">
             <div className="rounded-3xl bg-brand-600 p-7 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-200">
-                Vous préférez appeler&nbsp;?
+                Les demandes arrivent ici
               </p>
+
               <a
-                href={site.contact.phoneHref}
-                className="mt-3 flex items-center gap-3 text-2xl font-extrabold tracking-tight"
+                href={`mailto:${site.contact.email}`}
+                className="mt-4 flex items-start gap-3 text-base font-extrabold leading-snug tracking-tight break-all hover:text-brand-100"
               >
-                <IconPhone className="h-6 w-6 shrink-0" />
-                {site.contact.phone}
+                <IconMail className="mt-0.5 h-5 w-5 shrink-0" />
+                {site.contact.email}
               </a>
+
               <a
                 href={site.contact.mobileHref}
-                className="mt-2 block text-sm font-semibold text-brand-100"
+                className="mt-4 flex items-center gap-3 text-2xl font-extrabold tracking-tight hover:text-brand-100"
               >
-                ou {site.contact.mobile}
+                <IconPhone className="h-6 w-6 shrink-0" />
+                {site.contact.mobile}
               </a>
+
               <p className="mt-4 text-sm leading-relaxed text-brand-100">
                 {site.contact.name} vous répond directement, sans intermédiaire.
               </p>
+
+              <a
+                href={site.contact.phoneHref}
+                className="mt-4 inline-block border-t border-white/20 pt-4 text-sm text-brand-200 hover:text-white"
+              >
+                Bureau de Tarbes : {site.contact.phone}
+              </a>
             </div>
 
             {[
