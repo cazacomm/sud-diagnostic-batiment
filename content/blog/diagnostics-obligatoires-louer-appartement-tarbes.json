@@ -2,20 +2,20 @@
   "topic": 2,
   "slug": "diagnostics-obligatoires-louer-appartement-tarbes",
   "date": "2026-11-17",
-  "category": "Réglementation",
+  "category": "Location",
   "title": "Diagnostics obligatoires pour louer un appartement à Tarbes",
-  "h1": "Obligations de diagnostics pour la location à Tarbes",
+  "h1": "Louer un appartement à Tarbes : les diagnostics obligatoires",
   "subtitle": "Liste des diagnostics et validités en location",
   "breadcrumb": "Diagnostics location",
-  "meta_description": "Découvrez les diagnostics immobiliers obligatoires pour louer un appartement à Tarbes, avec leurs durées de validité.",
+  "meta_description": "DPE, ERP, loi Boutin, gaz, électricité, plomb, amiante : les diagnostics obligatoires pour louer à Tarbes et leur durée de validité.",
   "lede": "Vous êtes propriétaire d'un appartement à Tarbes, dans les Hautes-Pyrénées, et vous souhaitez le mettre en location ? Avant de pouvoir accueillir vos futurs locataires, il est essentiel de respecter certaines obligations légales. Parmi celles-ci, les diagnostics immobiliers jouent un rôle clé pour garantir la sécurité et le confort des occupants. Que vous soyez à Aureilhan, Séméac ou dans le centre de Tarbes, cet article vous guide à travers les diagnostics obligatoires et leurs durées de validité.",
   "sections": [
     {
-      "h2": "Le Diagnostic de Performance Énergétique (DPE)",
+      "h2": "Le diagnostic de performance énergétique (DPE)",
       "content": [
         {
           "type": "p",
-          "text": "Le Diagnostic de Performance Énergétique, ou DPE, est un élément incontournable pour toute location. Il informe le locataire sur la consommation énergétique du logement et son impact environnemental. Réalisé par un diagnostiqueur certifié comme SUD Diagnostic Bâtiment, il est valable 10 ans, sauf si des travaux importants modifient la consommation énergétique du bien. À Tarbes et dans le Sud-Ouest, ce diagnostic est essentiel pour valoriser votre bien et informer vos locataires de manière transparente."
+          "text": "Le diagnostic de performance énergétique, ou DPE, est obligatoire pour toute location. Il classe le logement de A à G et informe le locataire de sa consommation d’énergie et de son impact environnemental. Réalisé par un diagnostiqueur certifié comme SUD Diagnostic Bâtiment, il est valable **10 ans**. Attention toutefois : un DPE réalisé avant le 1ᵉʳ juillet 2021 relève de l’ancienne méthode de calcul et n’est plus valable. Il doit être entièrement refait, même s’il a moins de 10 ans."
         },
         {
           "type": "h3",
@@ -23,11 +23,11 @@
         },
         {
           "type": "p",
-          "text": "Le DPE est non seulement obligatoire, mais il constitue aussi un argument de poids pour attirer des locataires soucieux de leur impact écologique et de leur facture énergétique. À Tarbes, où les hivers peuvent être rigoureux, connaître la performance énergétique d'un logement est un atout non négligeable."
+          "text": "Le DPE est aussi un argument pour attirer des locataires attentifs à leur facture énergétique. Entre Tarbes et les vallées pyrénéennes, les hivers peuvent être rigoureux : connaître la performance énergétique d’un logement est un vrai repère pour un futur occupant."
         },
         {
           "type": "p",
-          "text": "De plus, un DPE favorable peut augmenter la valeur locative de votre bien. Les locataires potentiels dans des villes comme Lourdes ou Bagnères-de-Bigorre sont de plus en plus attentifs à ces informations avant de s'engager. Un logement bien noté sur l'échelle énergétique peut faire la différence dans un marché concurrentiel."
+          "text": "Un logement bien classé se démarque dans les annonces, que l’appartement soit dans le centre de Tarbes, à Lourdes ou à Bagnères-de-Bigorre. À l’inverse, un classement défavorable mérite d’être anticipé : le rapport indique les travaux d’amélioration recommandés."
         },
         {
           "type": "p",
@@ -35,12 +35,12 @@
         },
         {
           "type": "p",
-          "text": "En outre, le DPE permet de sensibiliser les propriétaires aux enjeux énergétiques et de les inciter à entreprendre des travaux d'amélioration. Par exemple, un propriétaire à Lannemezan pourrait décider d'isoler les combles après avoir constaté une mauvaise note énergétique. Cette démarche non seulement améliore le confort des locataires mais peut aussi réduire les charges de chauffage."
+          "text": "Le DPE aide enfin le propriétaire à hiérarchiser ses travaux. Isolation des combles, remplacement des menuiseries ou du système de chauffage : les recommandations du rapport donnent des pistes concrètes pour améliorer le confort des locataires et réduire les charges."
         }
       ]
     },
     {
-      "h2": "Le diagnostic gaz et électricité",
+      "h2": "Les diagnostics gaz et électricité",
       "content": [
         {
           "type": "p",
@@ -56,7 +56,7 @@
         },
         {
           "type": "p",
-          "text": "Par exemple, à Vic-en-Bigorre, une installation de gaz ancienne peut présenter des risques non négligeables si elle n'est pas contrôlée périodiquement. Les locataires apprécient de savoir que ces contrôles ont été effectués, ce qui renforce leur confiance envers le propriétaire."
+          "text": "Une installation de gaz ancienne mérite d’être contrôlée, que le logement se trouve à Tarbes, à Vic-en-Bigorre ou ailleurs en Bigorre. Le rapport signale les éventuelles anomalies, et les locataires apprécient de savoir que ce contrôle a été fait."
         },
         {
           "type": "p",
@@ -64,7 +64,7 @@
         },
         {
           "type": "p",
-          "text": "Dans des communes comme Juillan et Ibos, où la population est en croissance, les nouveaux locataires sont souvent des familles avec de jeunes enfants. Pour ces familles, la sécurité des installations électriques et de gaz est une priorité absolue, rendant ces diagnostics encore plus pertinents."
+          "text": "Pour un locataire, en particulier une famille avec de jeunes enfants, la sécurité des installations électriques et de gaz est une priorité. Un dossier à jour est un gage de sérieux de la part du bailleur."
         }
       ]
     },
@@ -81,11 +81,11 @@
         },
         {
           "type": "p",
-          "text": "En l'absence de plomb, le CREP est valable à vie. Si du plomb est détecté, le diagnostic doit être renouvelé tous les 6 ans. Pour le bien-être de vos locataires, il est crucial de le tenir à jour."
+          "text": "En l’absence de plomb, le CREP est valable **à vie**. Si du plomb est détecté, il est valable **6 ans** en location. Dans ce cas, le plomb doit être rendu inaccessible, et surtout sans faire de poussière : poncer ou gratter une peinture au plomb est précisément ce qu’il faut éviter."
         },
         {
           "type": "p",
-          "text": "Dans des communes comme Argelès-Gazost, où le patrimoine architectural est riche, le CREP est un diagnostic essentiel pour les propriétaires de bâtiments anciens. Ces diagnostics permettent de conserver l'authenticité des lieux tout en garantissant la sécurité des occupants."
+          "text": "Le bâti ancien est très présent en Bigorre, du centre de Tarbes aux maisons de village des vallées autour d’Argelès-Gazost. Pour tous ces logements construits avant 1949, le CREP fait partie du dossier de location."
         },
         {
           "type": "p",
@@ -93,16 +93,24 @@
         },
         {
           "type": "p",
-          "text": "Le CREP est également une opportunité pour les propriétaires de rénover et valoriser leur bien. Par exemple, un propriétaire à Maubourguet pourrait décider de rénover les murs et plafonds pour éliminer toute trace de plomb, améliorant ainsi la qualité de vie des locataires tout en préservant le charme de l'ancien."
+          "text": "Si des travaux sont envisagés dans un logement où du plomb a été repéré, mieux vaut en parler avant de commencer : un repérage plomb avant travaux permet d’informer les entreprises et d’éviter de disperser des poussières toxiques."
+        },
+        {
+          "type": "h3",
+          "text": "Et l’amiante ?"
+        },
+        {
+          "type": "p",
+          "text": "Pour les logements dont le permis de construire est antérieur au 1ᵉʳ juillet 1997, le repérage amiante fait aussi partie des obligations du bailleur. En l’absence d’amiante, le rapport n’a pas de limite de validité. Retrouvez le détail sur notre page [diagnostic amiante](/diagnostics/amiante)."
         }
       ]
     },
     {
-      "h2": "L'état des risques et pollutions (ERP)",
+      "h2": "L’état des risques et pollutions (ERP)",
       "content": [
         {
           "type": "p",
-          "text": "L'ERP, ou état des risques et pollutions, informe les locataires des risques naturels, miniers, technologiques, sismiques et de radon auxquels un bien peut être exposé. À Tarbes et dans les Hautes-Pyrénées, ce diagnostic est d'autant plus important que la région est sujette à des risques sismiques et inondations."
+          "text": "L’ERP, ou état des risques et pollutions, informe le locataire des risques naturels, miniers et technologiques auxquels le bien est exposé, ainsi que de la sismicité et du potentiel radon. Il est établi d’après les plans de prévention des risques et les arrêtés préfectoraux propres à chaque commune : son contenu change donc d’une commune à l’autre."
         },
         {
           "type": "h3",
@@ -114,7 +122,7 @@
         },
         {
           "type": "p",
-          "text": "Dans des zones sensibles comme Lannemezan, où les risques d'inondation peuvent être plus élevés, l'ERP est un outil essentiel pour prévenir les locataires des dangers possibles. Cela leur permet de prendre des décisions éclairées concernant la location."
+          "text": "D’une commune à l’autre, de Tarbes à Lannemezan ou à Argelès-Gazost, les risques recensés ne sont pas les mêmes. C’est pourquoi l’ERP est établi pour l’adresse exacte du logement, à partir des documents officiels en vigueur."
         },
         {
           "type": "p",
@@ -122,12 +130,12 @@
         },
         {
           "type": "p",
-          "text": "Les propriétaires de Tarbes peuvent également envisager des mesures préventives basées sur l'ERP. Par exemple, l'installation de systèmes de drainage ou de protections contre les inondations peut rassurer les locataires et protéger le bien immobilier."
+          "text": "L’ERP n’impose pas de travaux : c’est un document d’information. Il permet au locataire de s’installer en connaissance de cause, et au propriétaire de répondre précisément aux questions posées lors des visites."
         }
       ]
     },
     {
-      "h2": "Le mesurage loi Boutin",
+      "h2": "La surface habitable loi Boutin",
       "content": [
         {
           "type": "p",
@@ -143,7 +151,7 @@
         },
         {
           "type": "p",
-          "text": "Dans les villes environnantes comme Juillan ou Barbazan-Debat, les locataires apprécient que la surface habitable soit annoncée avec précision, évitant ainsi toute mauvaise surprise."
+          "text": "À Tarbes comme à Juillan ou à Barbazan-Debat, une surface habitable mesurée par un professionnel évite toute contestation ultérieure de la part du locataire."
         },
         {
           "type": "p",
@@ -156,7 +164,7 @@
       ]
     },
     {
-      "h2": "L'importance des diagnostics en location",
+      "h2": "Bien préparer sa mise en location à Tarbes",
       "content": [
         {
           "type": "p",
@@ -176,7 +184,7 @@
         },
         {
           "type": "p",
-          "text": "Pour des conseils et informations supplémentaires, n'hésitez pas à consulter notre [blog](/blog)."
+          "text": "Notre page [diagnostics avant location](/avant-location) récapitule toutes les obligations et leurs durées de validité, et d’autres conseils sont réunis sur [le blog de SUD Diagnostic Bâtiment](/blog/). Pour un tarif ferme, faites une [demande de devis](/devis)."
         },
         {
           "type": "p",
@@ -188,11 +196,11 @@
   "faq": [
     {
       "question": "Quels diagnostics sont obligatoires pour louer un appartement à Tarbes ?",
-      "answer": "Les diagnostics obligatoires incluent le DPE, les diagnostics gaz et électricité, le CREP (plomb), l'ERP (état des risques et pollutions) et le mesurage loi Boutin pour la surface habitable."
+      "answer": "Le DPE, l’état des risques et pollutions (ERP) et la surface habitable loi Boutin sont toujours obligatoires. S’y ajoutent les diagnostics gaz et électricité pour les installations de plus de 15 ans, le plomb (CREP) si le logement date d’avant 1949, et l’amiante si le permis de construire est antérieur à juillet 1997."
     },
     {
       "question": "Quelle est la durée de validité du diagnostic DPE en location ?",
-      "answer": "Le diagnostic de performance énergétique (DPE) est valable 10 ans pour la location, sauf si des travaux importants modifient la consommation énergétique du logement."
+      "answer": "Le DPE est valable 10 ans en location. Un DPE réalisé avant le 1ᵉʳ juillet 2021 n’est cependant plus valable : il doit être entièrement refait selon la réglementation actuelle."
     },
     {
       "question": "Quand est-ce que le diagnostic plomb est requis ?",
@@ -200,11 +208,11 @@
     },
     {
       "question": "Pourquoi réaliser un diagnostic ERP ?",
-      "answer": "L'état des risques et pollutions (ERP) informe sur les risques naturels, miniers, technologiques, sismiques et de radon. À Tarbes, ce diagnostic est crucial pour la sécurité et la transparence envers les locataires."
+      "answer": "L’état des risques et pollutions informe le locataire des risques naturels, miniers et technologiques, de la sismicité et du potentiel radon propres à la commune du logement. Il est valable 6 mois et doit être à jour à la signature du bail."
     },
     {
-      "question": "Comment est calculée la surface habitable selon la loi Boutin ?",
-      "answer": "La surface habitable selon la loi Boutin est calculée en mesurant la superficie des pièces d'habitation, excluant les murs, cloisons, escaliers, gaines, embrasures de portes et fenêtres."
+      "question": "Les diagnostics gaz et électricité sont-ils obligatoires en location ?",
+      "answer": "Oui, dès que l’installation a plus de 15 ans. En location, ils sont valables 6 ans. Ils vérifient la sécurité des installations intérieures et signalent les anomalies éventuelles."
     }
   ]
 }

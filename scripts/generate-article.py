@@ -723,6 +723,16 @@ N'invente AUCUN prix, AUCUN chiffre d'affaires ou de fréquentation, AUCUN nom d
 client, AUCUNE date de fondation, AUCUNE norme ou réglementation, AUCUN label,
 AUCUN avis client, AUCUN horaire, AUCUNE adresse autre que ceux fournis ci-dessous.
 Si une information te manque, reformule pour t'en passer.
+N'affirme RIEN de propre à une commune : ni risque (inondation, séisme…), ni
+démographie, ni état du marché, ni climat local, ni ancienneté du bâti d'une
+commune précise. Les noms de communes servent UNIQUEMENT à situer le lecteur
+(« que votre bien soit à Tarbes, à Lourdes ou à Vic-en-Bigorre »).
+Quand tu listes les diagnostics obligatoires d'une situation (vente, location,
+travaux), la liste doit être COMPLÈTE au regard des faits autorisés ci-dessous :
+n'en oublie aucun (amiante compris pour les biens d'avant juillet 1997).
+Plomb : ne conseille jamais de gratter, poncer ou « éliminer » le plomb ; la
+consigne est de le rendre inaccessible sans faire de poussière.
+Titres h2 en casse française (seule la première lettre en majuscule).
 
 FAITS AUTORISÉS (seule source de faits chiffrés, d'adresses et d'horaires)
 {{facts}}

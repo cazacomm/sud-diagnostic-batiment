@@ -56,6 +56,12 @@ une mention du bureau de Tarbes (Cours Gambetta) par article.
 - de liste figée de communes soumises au diagnostic termites : les arrêtés
   préfectoraux changent, toujours renvoyer à l'arrêté en vigueur ;
 - la mise en copropriété (prestation abandonnée) ;
+- une affirmation propre à une commune (risques, démographie, marché, climat) :
+  les communes servent uniquement à situer le lecteur ;
+- une liste d'obligations incomplète (vérifier vente / location / travaux contre
+  les faits de `blog-config.json`, amiante compris) ;
+- un conseil de gratter, poncer ou retirer le plomb : la consigne est de le
+  rendre inaccessible sans faire de poussière ;
 - pour la loi Carrez : la baisse de prix réclamée par l'acheteur ou la marge des 5 %.
 
 En cas de doute : rester qualitatif et renvoyer vers la demande de devis.
