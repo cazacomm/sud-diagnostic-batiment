@@ -151,6 +151,18 @@ export function Header() {
               </li>
             ))}
           </ul>
+          <ul className="mb-6 grid gap-1 sm:grid-cols-2">
+            <li>
+              <Link href="/diagnostic-immobilier" className="block rounded-xl px-3 py-2.5 font-semibold hover:bg-brand-50">
+                Communes desservies
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="block rounded-xl px-3 py-2.5 font-semibold hover:bg-brand-50">
+                Blog &amp; conseils
+              </Link>
+            </li>
+          </ul>
           <div className="grid gap-2 sm:grid-cols-2">
             <Link href="/devis" className="rounded-full bg-brand-600 px-5 py-3 text-center text-sm font-bold text-white">
               Demander un devis

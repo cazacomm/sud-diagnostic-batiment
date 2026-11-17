@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import { PageHero, Section, Eyebrow, H2 } from "@/components/ui";
 import { CtaBand } from "@/components/blocks";
 import { CoverageRadar } from "@/components/coverage-radar";
+import Link from "next/link";
 import { site } from "@/lib/site";
+import { communes } from "@/lib/communes";
+import { IconPin } from "@/components/icons";
+import { absUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Secteur d’intervention",
   description:
     "SUD Diagnostic Bâtiment intervient dans les Hautes-Pyrénées (65), les Pyrénées-Atlantiques (64), le Gers (32), la Haute-Garonne (31) et les Landes (40).",
+  alternates: { canonical: absUrl("/secteur/") },
 };
 
 export default function SecteurPage() {
@@ -83,6 +88,28 @@ export default function SecteurPage() {
             </p>
           </div>
         </div>
+      </Section>
+
+      <Section className="py-16 sm:py-20">
+        <Eyebrow>Hautes-Pyrénées</Eyebrow>
+        <H2 className="text-2xl sm:text-3xl">Diagnostic immobilier dans votre commune</H2>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          Quelques-unes des communes où nous intervenons le plus souvent, autour de
+          Tarbes et dans toute la Bigorre.
+        </p>
+        <ul className="mt-8 flex flex-wrap gap-2.5">
+          {communes.map((c) => (
+            <li key={c.slug}>
+              <Link
+                href={`/diagnostic-immobilier/${c.slug}`}
+                className="inline-flex items-center gap-2 rounded-full border border-sand-300 bg-white px-4 py-2.5 text-sm font-bold transition hover:border-brand-400 hover:text-brand-700"
+              >
+                <IconPin className="h-4 w-4 text-brand-500" />
+                {c.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <CtaBand />

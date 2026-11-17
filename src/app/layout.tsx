@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/lib/site";
+import { JsonLd, SITE_URL, businessJsonLd } from "@/lib/seo";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
   },
   description:
     "Diagnostics immobiliers avant vente, location et travaux à Tarbes et dans les Hautes-Pyrénées. DPE, amiante, plomb, termites, gaz, électricité, loi Carrez. Devis gratuit.",
+  alternates: {
+    types: { "application/rss+xml": `${SITE_URL}/rss.xml` },
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -43,6 +47,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className={`${jakarta.variable} font-sans antialiased`}>
+        <JsonLd data={businessJsonLd()} />
         <a
           href="#contenu"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-brand-600 focus:px-5 focus:py-2 focus:text-sm focus:text-white"

@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { site } from "@/lib/site";
+import { absUrl } from "@/lib/seo";
 import { diagnostics } from "@/lib/diagnostics";
 import { Button, Eyebrow, H2, Section } from "@/components/ui";
 import { CtaBand, DiagnosticCard, SituationCard } from "@/components/blocks";
@@ -12,6 +14,10 @@ import {
   IconShield,
   IconUser,
 } from "@/components/icons";
+
+export const metadata: Metadata = {
+  alternates: { canonical: absUrl("/") },
+};
 
 const years = new Date().getFullYear() - site.since;
 

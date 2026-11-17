@@ -3,8 +3,8 @@
 Refonte du site [sud-diagnostic.fr](https://www.sud-diagnostic.fr) pour
 **SUD Diagnostic Bâtiment** (Christian Dulin, diagnostiqueur immobilier à Tarbes).
 
-> ⚠️ **Brouillon.** Version de travail en attente de validation client et de
-> l'accès au nom de domaine. Rien n'est publié en production.
+> En ligne sur **https://www.sud-diagnostic.fr** (GitHub Pages, workflow
+> `.github/workflows/pages.yml`, déployé à chaque push sur `main`).
 
 ## Stack
 
@@ -49,6 +49,26 @@ la carte de visite (`src/components/icons.tsx`).
 | `/devis` | Formulaire de demande de devis |
 | `/contact` | Coordonnées |
 | `/mentions-legales` | Mentions légales |
+| `/diagnostic-immobilier` | Index des communes desservies |
+| `/diagnostic-immobilier/[ville]` | Page locale SEO par commune (`src/lib/communes.ts`) |
+| `/blog` · `/blog/[slug]` | Blog (articles dans `content/blog/*.json`) |
+| `/rss.xml` · `/llms.txt` · `/sitemap.xml` | Générés au build |
+
+## Référencement local
+
+- Données structurées `ProfessionalService` sur toutes les pages (`src/lib/seo.tsx`),
+  `Service` + `FAQPage` + `BreadcrumbList` sur les pages communes, `BlogPosting`
+  sur les articles.
+- Une page par commune avec un texte propre (bâti local, situation) : ajouter
+  une commune = ajouter une entrée dans `src/lib/communes.ts`, le sitemap, le
+  pied de page et llms.txt suivent.
+
+## Blog hebdomadaire
+
+Un article est rédigé et publié automatiquement chaque lundi par
+`.github/workflows/blog-auto.yml` (secret `OPENAI_API_KEY` requis). Procédure,
+règles éditoriales et réserve de sujets : [`BLOG_WORKFLOW.md`](BLOG_WORKFLOW.md).
+Faits autorisés pour la rédaction : `blog-config.json`.
 
 ## Contenu
 
@@ -79,9 +99,8 @@ visite.
 - [ ] **Chiffres de la home** — « 24 h pour votre devis » : à confirmer.
 - [ ] **Redirections 301** depuis les anciennes URL (`*-i12.html`, `dpe-*.html`,
       `diagnostic-immobilier-*.html`) vers les nouvelles pages.
-- [ ] **Pages communes SEO** (DPE Tarbes, Diagnostic immobilier Lourdes…) —
-      l'ancien site en comptait une vingtaine, à réintégrer si l'on veut
-      conserver le référencement local.
+- [x] **Pages communes SEO** — 20 communes des Hautes-Pyrénées
+      (`/diagnostic-immobilier/<commune>`).
 
 ## Crédits photo
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "./logo";
 import { site } from "@/lib/site";
 import { diagnostics } from "@/lib/diagnostics";
+import { communeBySlug, featuredCommunes } from "@/lib/communes";
 import { IconMail, IconPhone, IconPin } from "./icons";
 
 export function Footer() {
@@ -49,13 +50,37 @@ export function Footer() {
 
           <FooterCol title="Le cabinet">
             <FooterLink href="/secteur">Secteur d’intervention</FooterLink>
+            <FooterLink href="/blog">Blog &amp; conseils</FooterLink>
             <FooterLink href="/devis">Demande de devis</FooterLink>
             <FooterLink href="/contact">Nous contacter</FooterLink>
             <FooterLink href="/mentions-legales">Mentions légales</FooterLink>
           </FooterCol>
         </div>
 
-        <div className="mt-14 grid gap-6 border-t border-white/10 pt-8 sm:grid-cols-2">
+        <div className="mt-14 border-t border-white/10 pt-8">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-white">
+            Diagnostic immobilier près de chez vous
+          </p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {featuredCommunes.map((slug) => {
+              const c = communeBySlug(slug);
+              return c ? (
+                <li key={slug}>
+                  <Link href={`/diagnostic-immobilier/${slug}`} className="text-brand-200 transition hover:text-white">
+                    {c.name}
+                  </Link>
+                </li>
+              ) : null;
+            })}
+            <li>
+              <Link href="/diagnostic-immobilier" className="font-bold text-white hover:text-brand-200">
+                Toutes les communes →
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-10 grid gap-6 border-t border-white/10 pt-8 sm:grid-cols-2">
           {site.offices.map((o) => (
             <div key={o.label} className="flex gap-3 text-sm">
               <IconPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-300" />

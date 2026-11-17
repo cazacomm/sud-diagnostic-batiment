@@ -1,0 +1,146 @@
+name: Blog auto — SUD Diagnostic Bâtiment
+
+on:
+  schedule:
+    # Tous les lundis à 9h00 UTC (10h en hiver, 11h en été à Paris).
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Simulation : génère l'article mais n'écrit et ne pousse rien"
+        type: boolean
+        default: false
+      rewrite:
+        description: "Slug d'un article existant à régénérer (vide = sujet suivant)"
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  # Nécessaire pour relancer le déploiement : un push fait avec le
+  # GITHUB_TOKEN ne déclenche pas les autres workflows.
+  actions: write
+
+concurrency:
+  group: blog-auto
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Génération et publication d'un article
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installation des dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai
+
+      - name: Identité git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Réapprovisionnement de la réserve de sujets
+        if: inputs.dry_run != true && inputs.rewrite == ''
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if ! python scripts/generate-article.py --topics-only; then
+            echo "::warning::Réapprovisionnement des sujets échoué — le job continue avec la réserve existante."
+          fi
+
+      - name: Push des nouveaux sujets
+        if: inputs.dry_run != true && inputs.rewrite == ''
+        run: |
+          if [ -z "$(git log --oneline origin/${GITHUB_REF_NAME}..HEAD)" ]; then
+            echo "::notice::Aucun nouveau sujet à pousser."
+            exit 0
+          fi
+          git push origin HEAD:${GITHUB_REF_NAME}
+
+      - name: Génération de l'article
+        id: generate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REWRITE: ${{ inputs.rewrite }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set +e
+          args=""
+          if [ -n "$REWRITE" ]; then args="--rewrite $REWRITE"; fi
+          if [ "$DRY_RUN" = "true" ]; then args="$args --dry-run"; fi
+          python scripts/generate-article.py $args
+          code=$?
+          set -e
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          case $code in
+            0)  echo "Article généré." ;;
+            78) echo "::notice::Aucun nouveau sujet à traiter — arrêt propre." ;;
+            *)  echo "::error::Échec de la génération (code $code)." ; exit $code ;;
+          esac
+
+      # Le site est en Next.js : on vérifie que l'article compile avant de le
+      # publier. Un article cassé ne part jamais en ligne.
+      - name: Setup Node
+        if: steps.generate.outputs.exit_code == '0' && inputs.dry_run != true
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build de contrôle
+        if: steps.generate.outputs.exit_code == '0' && inputs.dry_run != true
+        run: |
+          npm ci
+          npm run build
+
+      - name: Commit et push
+        id: push
+        if: steps.generate.outputs.exit_code == '0' && inputs.dry_run != true
+        env:
+          REWRITE: ${{ inputs.rewrite }}
+        run: |
+          git add content/blog
+          if git diff --cached --quiet; then
+            echo "::notice::Aucune modification à committer."
+            exit 0
+          fi
+          if [ -n "$REWRITE" ]; then
+            msg="chore(blog): reecriture de $REWRITE"
+          else
+            msg="chore(blog): article auto du $(date -u +%Y-%m-%d)"
+          fi
+          git commit -m "$msg"
+          git push origin HEAD:${GITHUB_REF_NAME}
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Déploiement du site
+        if: steps.push.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
+
+      - name: Récapitulatif
+        if: always()
+        run: |
+          {
+            echo "### Blog auto — SUD Diagnostic Bâtiment"
+            echo ""
+            echo "- Code de sortie du script : \`${{ steps.generate.outputs.exit_code }}\`"
+            echo "- Publié et déployé : \`${{ steps.push.outputs.pushed || 'false' }}\`"
+            echo ""
+            echo "Codes : \`0\` succès · \`78\` aucun sujet restant · \`1\` erreur."
+          } >> "$GITHUB_STEP_SUMMARY"

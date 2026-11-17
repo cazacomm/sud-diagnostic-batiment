@@ -1,0 +1,92 @@
+{
+  "topic": 1,
+  "slug": "quels-diagnostics-vendre-maison-tarbes",
+  "date": "2026-11-17",
+  "category": "Vente",
+  "title": "Quels diagnostics pour vendre une maison à Tarbes ?",
+  "h1": "Vendre une maison à Tarbes : quels diagnostics prévoir ?",
+  "subtitle": "La liste complète, diagnostic par diagnostic, selon l’âge et la nature de votre bien",
+  "breadcrumb": "Diagnostics pour vendre",
+  "meta_description": "DPE, amiante, plomb, termites, gaz, électricité, ERP : les diagnostics obligatoires pour vendre une maison à Tarbes et leur durée de validité.",
+  "lede": "Vous avez trouvé un acquéreur pour votre maison à Tarbes, ou vous vous apprêtez à la mettre en vente, et le notaire vous réclame le **dossier de diagnostic technique**. Quels diagnostics faut-il exactement ? Tout dépend de l’année de construction du bien, de ses installations et de sa situation. Voici, diagnostic par diagnostic, ce qui est obligatoire, pourquoi, et combien de temps chaque rapport reste valable, pour arriver à la signature sans mauvaise surprise.",
+  "sections": [
+    {
+      "h2": "Le dossier de diagnostic technique, socle de toute vente",
+      "content": [
+        { "type": "p", "text": "Le dossier de diagnostic technique (DDT) regroupe l’ensemble des rapports que le vendeur doit fournir à l’acquéreur. Il est annexé à la promesse de vente puis à l’acte authentique. Son objectif : informer l’acheteur de l’état du bien sur des points précis (énergie, santé, sécurité, risques) avant qu’il ne s’engage." },
+        { "type": "p", "text": "Tous les diagnostics ne s’appliquent pas à toutes les maisons. Une maison récente chauffée à l’électricité n’aura pas le même dossier qu’une maison de ville tarbaise d’avant-guerre équipée d’une vieille chaudière gaz. C’est pourquoi la première question que nous posons lors d’une [demande de devis](/devis) porte sur l’année de construction, la surface et la présence du gaz." },
+        { "type": "strong", "text": "Un dossier incomplet ou périmé peut retarder la signature chez le notaire, voire fragiliser la vente. Mieux vaut le préparer dès la mise en vente." }
+      ]
+    },
+    {
+      "h2": "Les diagnostics obligatoires pour toutes les maisons",
+      "content": [
+        { "type": "h3", "text": "Le DPE et, si besoin, l’audit énergétique" },
+        { "type": "p", "text": "Le [diagnostic de performance énergétique](/diagnostics/dpe) classe le logement de A à G et estime ses coûts annuels d’énergie. Son étiquette doit figurer dès l’annonce. Il est valable **10 ans**, mais attention : un DPE réalisé avant le 1ᵉʳ juillet 2021 relève de l’ancienne méthode de calcul et n’est plus valable. Il doit être entièrement refait selon la réglementation actuelle." },
+        { "type": "p", "text": "Si votre maison est classée E, F ou G, un **audit énergétique** s’ajoute au DPE. Il propose des scénarios de travaux pour améliorer la performance du logement et doit être remis à l’acquéreur dès la première visite." },
+        { "type": "h3", "text": "L’état des risques et pollutions (ERP)" },
+        { "type": "p", "text": "L’ERP informe l’acquéreur des risques naturels, miniers et technologiques auxquels le bien est exposé, ainsi que de la sismicité et du potentiel radon. Il s’appuie sur les plans de prévention des risques et les arrêtés préfectoraux propres à chaque commune. Sa validité est courte : **6 mois**. Si la vente traîne, il faudra le mettre à jour avant l’acte." }
+      ]
+    },
+    {
+      "h2": "Les diagnostics qui dépendent de l’âge de la maison",
+      "content": [
+        { "type": "p", "text": "L’année du permis de construire est le critère décisif. À Tarbes, où le centre-ville compte beaucoup de maisons anciennes et où les quartiers pavillonnaires se sont développés tout au long du XXᵉ siècle, ces deux diagnostics reviennent très souvent." },
+        { "type": "h3", "text": "Le diagnostic plomb (CREP) : maisons d’avant 1949" },
+        { "type": "p", "text": "Le constat de risque d’exposition au plomb est obligatoire si le permis de construire est antérieur au 1ᵉʳ janvier 1949. Il recherche le plomb dans les revêtements, notamment les anciennes peintures. En présence de plomb, le constat est valable **1 an** pour une vente. En son absence, il est valable **à vie**." },
+        { "type": "h3", "text": "Le diagnostic amiante : maisons d’avant juillet 1997" },
+        { "type": "p", "text": "Le repérage amiante concerne les biens dont le permis de construire a été délivré avant le 1ᵉʳ juillet 1997. Il porte sur les matériaux et produits accessibles sans travaux destructifs : toitures, conduits, dalles de sol, enduits. Si aucun matériau amianté n’est repéré, le rapport n’a **pas de limite de validité**." },
+        { "type": "p", "text": "Vous ne connaissez pas l’année exacte de construction ? L’acte de propriété ou le permis de construire permettent de la retrouver. Nous vous aidons à la vérifier avant l’intervention." }
+      ]
+    },
+    {
+      "h2": "Les diagnostics liés aux installations",
+      "content": [
+        { "type": "p", "text": "Deux diagnostics portent sur la sécurité des installations intérieures. Ils sont obligatoires dès que l’installation a **plus de 15 ans**, et sont valables **3 ans** dans le cadre d’une vente." },
+        { "type": "ul", "items": [
+          "**Le diagnostic gaz** contrôle l’alimentation, la ventilation et la combustion des appareils, selon la norme NF P 45-500.",
+          "**Le diagnostic électricité** vérifie le tableau, la mise à la terre, les protections et l’absence de matériels dangereux, selon la norme NF C 16-600."
+        ] },
+        { "type": "p", "text": "Une installation ancienne n’est pas forcément dangereuse, et un diagnostic qui relève des anomalies n’empêche pas de vendre. Le rapport informe l’acquéreur, qui peut prévoir des travaux en connaissance de cause." }
+      ]
+    },
+    {
+      "h2": "Termites et loi Carrez : selon la situation du bien",
+      "content": [
+        { "type": "h3", "text": "Le diagnostic termites" },
+        { "type": "p", "text": "Il est obligatoire dans les zones délimitées par arrêté préfectoral. Le département des Hautes-Pyrénées est largement couvert, ce qui rend le diagnostic quasi systématique à Tarbes et dans son agglomération. Certaines communes d’altitude en sont toutefois exemptées, et ces arrêtés évoluent : nous vérifions celui en vigueur avant chaque intervention. Le rapport est valable **6 mois**." },
+        { "type": "h3", "text": "Le mesurage loi Carrez" },
+        { "type": "p", "text": "Il ne concerne que les lots de copropriété. Une maison individuelle n’y est donc pas soumise, sauf si elle fait partie d’une copropriété horizontale. Le mesurage est valable **sans limite de durée**, tant que le bien n’est pas modifié." }
+      ]
+    },
+    {
+      "h2": "Préparer sereinement sa vente à Tarbes",
+      "content": [
+        { "type": "p", "text": "Le plus simple est de faire réaliser l’ensemble des diagnostics en une seule visite, par un même diagnostiqueur. Vous évitez de multiplier les rendez-vous et recevez un dossier cohérent, prêt à transmettre à votre agence ou à votre notaire. Notre page [diagnostics avant vente](/avant-vente) récapitule les obligations et leurs durées de validité." },
+        { "type": "p", "text": "Basés à Tarbes, Cours Gambetta, nous intervenons dans tous les quartiers de la ville et dans toute l’agglomération : Aureilhan, Séméac, Odos, Laloubère, Juillan, Barbazan-Debat ou Bordères-sur-l’Échez. Retrouvez le détail de nos interventions sur la page [diagnostic immobilier à Tarbes](/diagnostic-immobilier/tarbes), et d’autres conseils sur [le blog de SUD Diagnostic Bâtiment](/blog/)." }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quels diagnostics sont obligatoires pour vendre une maison à Tarbes ?",
+      "answer": "Le DPE et l’état des risques et pollutions sont toujours obligatoires. S’y ajoutent le plomb si le permis de construire date d’avant 1949, l’amiante s’il date d’avant juillet 1997, le gaz et l’électricité pour les installations de plus de 15 ans, et le diagnostic termites selon l’arrêté préfectoral en vigueur."
+    },
+    {
+      "question": "Mon DPE de 2020 est-il encore valable pour vendre ?",
+      "answer": "Non. Un DPE réalisé avant le 1ᵉʳ juillet 2021 relève de l’ancienne méthode de calcul et n’est plus valable, même s’il a moins de 10 ans. Il doit être entièrement refait selon la réglementation actuelle avant la mise en vente."
+    },
+    {
+      "question": "Quand l’audit énergétique est-il obligatoire ?",
+      "answer": "À la vente d’une maison classée E, F ou G au DPE. L’audit énergétique s’ajoute alors au DPE et propose des scénarios de travaux pour améliorer la performance du logement. Il doit être remis à l’acquéreur dès la première visite."
+    },
+    {
+      "question": "Combien de temps le diagnostic termites est-il valable ?",
+      "answer": "Six mois. Comme l’état des risques et pollutions, il doit donc dater de moins de six mois à la signature de l’acte. Si la vente prend du retard, ces deux diagnostics doivent être mis à jour."
+    },
+    {
+      "question": "Peut-on faire tous les diagnostics en une seule visite ?",
+      "answer": "Oui. SUD Diagnostic Bâtiment réalise l’ensemble des diagnostics d’une vente en un seul rendez-vous, avec un seul interlocuteur. Vous recevez un dossier complet, prêt à transmettre à votre agence immobilière ou à votre notaire."
+    }
+  ]
+}
