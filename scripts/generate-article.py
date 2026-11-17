@@ -681,7 +681,7 @@ respectant exactement ce schéma :
   "h1": "titre affiché en haut de l'article, court et percutant",
   "subtitle": "sous-titre affiché sous le h1, 6 à 12 mots, qui situe le sujet",
   "breadcrumb": "libellé court pour le fil d'Ariane (2 à 4 mots)",
-  "category": "une catégorie parmi : {categories}",
+  "category": "une catégorie parmi : {{categories}}",
   "meta_description": "résumé de moins de 155 caractères",
   "lede": "chapô d'introduction, 60 à 90 mots, qui plante une situation concrète",
   "sections": [
